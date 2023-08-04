@@ -1,0 +1,33 @@
+.main__header {
+    position: fixed;
+    background: $header__transparent;
+    width: 100%;
+    z-index: 1000;
+
+    &__nav {
+        padding: $sm $p-fluid;
+
+        & .links {
+            a {
+                font-size: $md;
+                font-family: $pacifico;
+                color: hsla(26, 0%, 70%, 1);
+                margin: 0 calc($base * 2);
+                display: block;
+            }
+
+            .cart {
+                gap: $tiny;
+                display: flex;
+            }
+
+            .active {
+                color: $light100;
+
+                * {
+                    fill: $light100;
+                }
+            }
+        }
+    }
+}

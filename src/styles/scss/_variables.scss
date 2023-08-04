@@ -1,0 +1,17 @@
+// colors
+$header__transparent: hsla(0, 0%, 0%, 0.4);
+$light100: hsla(0, 0%, 100%, 1);
+
+// font sizes
+$md: 1.5rem;
+$base: 1rem;
+$sm: .9rem;
+$thin: .8rem;
+$tiny: .7rem;
+
+//layout
+$p-fluid: clamp($sm, 5vw, 20rem);
+
+// font family
+$poppins: "Poppins" Arial, sans-serif;
+$pacifico: "Pacifico", "Poppins", Arial, sans-serif;
