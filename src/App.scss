@@ -1,6 +1,9 @@
 @import "./styles/scss/variables";
 @import "./styles/custom.scss";
 @import "./styles/components/navbar.scss";
+@import "./styles/components/home.scss";
+@import "./styles/pages/home.scss";
+@import "./styles/components/products.scss";
 
 * {
     margin: 0;
@@ -17,5 +20,9 @@ html {
 
     li {
         list-style: none;
+    }
+
+    img {
+        max-width: 100%;
     }
 }

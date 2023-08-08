@@ -1,0 +1,41 @@
+.home__anmeties {
+    translate: 0% -70px;
+    padding: 0 $p-fluid;
+
+    h3 {
+        font-family: $pacifico;
+        color: $light100;
+        font-size: 1.25rem;
+        font-weight: 400;
+        margin-bottom: calc($tiny - 4px);
+    }
+
+    p {
+        color: $light200;
+        font-family: $poppins;
+        font-size: $base;
+        line-height: 1.4;
+    }
+
+    >div {
+        border-radius: 20px;
+        background: $dark200;
+        display: flex;
+        justify-content: space-between;
+        padding: $md;
+        margin: auto;
+        flex-wrap: wrap;
+        gap: $sm;
+
+        >div {
+            display: flex;
+            flex-grow: 1;
+            flex-basis: 150px;
+
+            svg {
+                margin: 5px 8px 0 0;
+            }
+
+        }
+    }
+}
