@@ -72,7 +72,7 @@
                         padding: .5rem $base;
                         border-radius: 20px;
                         width: 100%;
-                        margin-top: .8rem;
+                        margin-top: .5rem;
 
                         &::placeholder {
                             color: hsla(0, 0%, 74%, 1);
@@ -90,13 +90,14 @@
                     }
 
                     button {
-                        background: transparent;
+                        background: $light100;
                         border: 2px solid $light100;
                         border-radius: 20px;
                         padding: .6rem $big;
                         width: 150px;
                         display: block;
                         margin: $base auto 0 auto;
+                        color: $brown100;
                     }
                 }
             }
