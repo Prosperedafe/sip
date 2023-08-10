@@ -13,6 +13,7 @@ export const Navbar = () => {
                         <CartIcon />
                         <span>Cart</span>
                     </NavLink>
+                    <NavLink to="/contact">Contact</NavLink>
                     <SearchIcon />
                 </div>
             </nav>

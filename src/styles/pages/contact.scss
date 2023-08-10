@@ -1,0 +1,114 @@
+#contact {
+    padding: 8rem $p-fluid 3rem $p-fluid;
+
+    >div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        row-gap: $big;
+        column-gap: 4rem;
+
+        >div {
+            flex-grow: 1;
+            flex-basis: 200px;
+
+            .contact__details {
+                border: 1px solid hsla(0, 0%, 24%, 1);
+                border-radius: 20px;
+                padding: $base;
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    font-family: $poppins;
+                    font-size: calc($base + 2px);
+                    color: $light100;
+                    margin-bottom: calc($base + 4px);
+
+                    svg {
+                        margin-right: 5px;
+                    }
+
+                    &:nth-child(4) {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            section {
+
+                h3 {
+                    font-family: $pacifico;
+                    font-size: $big;
+                    color: $light100;
+                    font-weight: 400;
+                    margin: $big 0;
+                }
+
+                form {
+                    border: 1px solid hsla(0, 0%, 24%, 1);
+                    border-radius: 20px;
+                    padding: $base;
+
+                    * {
+                        font-family: $poppins;
+                        font-size: $base;
+                        color: $light100;
+                    }
+
+                    label {
+                        display: block;
+
+                        &[for=Message] {
+                            margin-top: 2rem;
+                        }
+                    }
+
+                    input,
+                    textarea {
+                        border: 1px solid hsla(0, 0%, 24%, 1);
+                        background: transparent;
+                        display: block;
+                        padding: .5rem $base;
+                        border-radius: 20px;
+                        width: 100%;
+                        margin-top: .8rem;
+
+                        &::placeholder {
+                            color: hsla(0, 0%, 74%, 1);
+                            font-weight: 300;
+                        }
+
+                        &:focus {
+                            outline: 1px solid hsla(0, 0%, 24%, 1);
+                        }
+                    }
+
+                    textarea {
+                        resize: none;
+                        min-height: 190px;
+                    }
+
+                    button {
+                        background: transparent;
+                        border: 2px solid $light100;
+                        border-radius: 20px;
+                        padding: .6rem $big;
+                        width: 150px;
+                        display: block;
+                        margin: $base auto 0 auto;
+                    }
+                }
+            }
+        }
+
+        figure {
+            flex-grow: 1;
+            flex-basis: 350px;
+
+            img {
+                width: 1005;
+            }
+        }
+    }
+}
