@@ -1,0 +1,57 @@
+.components__faq {
+    background: $creamPeach;
+    padding: $big $p-fluid;
+
+    h2 {
+        font-family: $pacifico;
+        font-size: $big;
+        font-weight: 400;
+        color: $dark100;
+        margin-bottom: $base;
+    }
+
+    >div {
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details {
+            background: $dark300;
+            padding: $base;
+            margin-bottom: $base;
+
+            * {
+                transition: all .3s ease;
+            }
+
+            & ::-webkit-details-marker {
+                display: none;
+            }
+
+            p,
+            summary {
+                color: $light100;
+                font-family: $poppins;
+                outline: none;
+                list-style: none;
+            }
+
+            summary {
+                cursor: pointer;
+                font-size: calc($base + 4px);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            >p {
+                margin-top: $base;
+            }
+        }
+    }
+}

@@ -165,5 +165,66 @@
         }
     }
 
-    .reviews {}
+    .reviews {
+        padding: 3rem $p-fluid;
+
+        >p {
+            color: $light100;
+        }
+
+        p {
+            font-family: $poppins;
+            font-size: $base;
+        }
+
+        &__box {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: $big;
+            gap: $base;
+
+            >div {
+                background: $light100;
+                border: 1px solid hsla(0, 0%, 86%, 1);
+                padding: $base;
+                max-width: 270px;
+                flex-basis: 200px;
+                flex-grow: 1;
+
+                >P {
+                    color: $brown100;
+                    margin: $thin 0;
+                }
+
+                .user__post {
+                    display: flex;
+
+                    img {
+                        margin-right: $base;
+                    }
+
+                    h4 {
+                        font-family: $pacifico;
+                        font-size: $base;
+                        color: $brown100;
+                        font-weight: 400;
+                        margin-bottom: 5px;
+                    }
+
+                    p {
+                        color: $dark100;
+                        font-size: 11px;
+                        font-weight: 500;
+                        display: flex;
+                        align-items: center;
+
+                        svg {
+                            margin-right: 8px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

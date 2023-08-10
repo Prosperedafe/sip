@@ -4,9 +4,11 @@ import elixer from "../../assets/images/elixer spitit.png";
 import squezzed from "../../assets/images/fruit juice.png";
 import trial from "../../assets/images/trial.png";
 import rating from "../../assets/icons/Ratings.svg";
+import reviewDp from "../../assets/icons/review-dp.png";
 import { HomeHero } from "../../components/Home/HomeHero";
 import { Categories } from "../../components/products/categories";
 import { hotDeals, mostSearched, recentlyViewed } from "./data";
+import { Faq } from "../../components/faq";
 
 const HomePage = () => {
     return (
@@ -90,19 +92,70 @@ const HomePage = () => {
             <section className="reviews">
                 <h2>Customer’s review</h2>
                 <p>Here is what our customers are saying about us.</p>
-                <div>
+                <div className="reviews__box">
                     <div>
                         <img src={rating} alt="rating" />
                         <p>
                             One stop shops for wines, vodkas, Whisky, etc. the prices are very good...
                         </p>
-                        <div>
-                            <h4>Mark Hope</h4>
-                            <p><span>Google Review</span></p>
+                        <div className="user__post">
+                            <img src={reviewDp} alt="user" />
+                            <div>
+                                <h4>Mark Hope</h4>
+                                <p><svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 9.4L0 5.4L1.4 4L4 6.6L10.6 0L12 1.4L4 9.4Z" fill="#686767" />
+                                </svg><span>Google Review</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <img src={rating} alt="rating" />
+                        <p>
+                            One stop shops for wines, vodkas, Whisky, etc. the prices are very good...
+                        </p>
+                        <div className="user__post">
+                            <img src={reviewDp} alt="user" />
+                            <div>
+                                <h4>Mark Hope</h4>
+                                <p><svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 9.4L0 5.4L1.4 4L4 6.6L10.6 0L12 1.4L4 9.4Z" fill="#686767" />
+                                </svg><span>Google Review</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <img src={rating} alt="rating" />
+                        <p>
+                            One stop shops for wines, vodkas, Whisky, etc. the prices are very good...
+                        </p>
+                        <div className="user__post">
+                            <img src={reviewDp} alt="user" />
+                            <div>
+                                <h4>Mark Hope</h4>
+                                <p><svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 9.4L0 5.4L1.4 4L4 6.6L10.6 0L12 1.4L4 9.4Z" fill="#686767" />
+                                </svg><span>Google Review</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <img src={rating} alt="rating" />
+                        <p>
+                            One stop shops for wines, vodkas, Whisky, etc. the prices are very good...
+                        </p>
+                        <div className="user__post">
+                            <img src={reviewDp} alt="user" />
+                            <div>
+                                <h4>Mark Hope</h4>
+                                <p><svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 9.4L0 5.4L1.4 4L4 6.6L10.6 0L12 1.4L4 9.4Z" fill="#686767" />
+                                </svg><span>Google Review</span></p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
+            <Faq />
         </section>
     )
 }
