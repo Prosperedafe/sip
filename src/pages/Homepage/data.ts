@@ -1,8 +1,3 @@
-// import { HomeHero } from "../../components/Home/HomeHero";
-// import squezzed from "../../assets/images/fruit juice.png";
-// import wine from "../../assets/images/secret wine.png";
-// import elixer from "../../assets/images/elixer spitit.png";
-// import beer from "../../assets/images/haven beer.png";
 import pineapple from "../../assets/images/pineapple soft drink.png";
 import blackberry from "../../assets/images/blackberry soft drink.png";
 import mixed from "../../assets/images/mixed soft drink.png";

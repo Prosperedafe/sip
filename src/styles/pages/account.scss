@@ -12,7 +12,7 @@
     &__overview {
         border: 1px solid hsla(0, 0%, 24%, 1);
         border-radius: 20px;
-        padding: $big;
+        padding: $base;
         color: $light100;
         font-family: $poppins;
 
@@ -154,6 +154,43 @@
                 &:last-child {
                     border-bottom: none;
                 }
+            }
+        }
+    }
+}
+
+#account__saved__items {
+    padding: 7rem 2rem 0 0;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: $big;
+
+    @media(max-width: 650px) {
+        grid-template-columns: 1fr;
+        padding: 7rem $base 0 $base;
+    }
+
+    &__items {
+        color: $light100;
+        border: 1px solid hsla(0, 0%, 24%, 1);
+        border-radius: 20px;
+        color: $light100;
+        font-family: $poppins;
+        padding: $base;
+
+        h2 {
+            font-size: $big;
+            font-family: $pacifico;
+            font-weight: 400;
+            margin-bottom: $big;
+        }
+
+        >div {
+            gap: $base;
+            margin-bottom: $base;
+
+            &:last-child {
+                margin-bottom: 0;
             }
         }
     }
