@@ -6,6 +6,7 @@ import Contact from './pages/contact/contact';
 import Login from './pages/auth/login';
 import SignUp from './pages/auth/signup';
 import AccountOverview from './pages/account/overview';
+import AccountOrders from './pages/account/orders';
 
 function App() {
 
@@ -19,7 +20,7 @@ function App() {
         <Route path='/signup' element={<SignUp />} />
         <Route path='/account/overview' element={<AccountOverview />} />
         <Route path='/account/saved' element={<SignUp />} />
-        <Route path='/account/orders' element={<SignUp />} />
+        <Route path='/account/orders' element={<AccountOrders />} />
         <Route path='/account/management' element={<SignUp />} />
       </Routes>
     </BrowserRouter>

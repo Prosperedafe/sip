@@ -85,3 +85,76 @@
         }
     }
 }
+
+#account__orders {
+    padding: 7rem 2rem 0 0;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: $big;
+
+    @media(max-width: 650px) {
+        grid-template-columns: 1fr;
+        padding: 7rem $base 0 $base;
+    }
+
+    &__orders {
+        color: $light100;
+        border: 1px solid hsla(0, 0%, 24%, 1);
+        border-radius: 20px;
+        color: $light100;
+        font-family: $poppins;
+        padding: $base;
+
+        h2 {
+            font-size: $big;
+            font-family: $pacifico;
+            font-weight: 400;
+            margin-bottom: $base;
+        }
+
+        .orders {
+
+            h3 {
+                font-size: $md;
+                font-family: $pacifico;
+                font-weight: 400;
+                margin-bottom: .4rem;
+            }
+
+            p {
+                color: hsla(0, 0%, 82%, 1);
+                font-weight: 300;
+            }
+
+            .order {
+                gap: $base;
+                display: flex;
+                flex-wrap: wrap;
+                padding: $base 0;
+                align-items: center;
+                justify-content: space-between;
+                border-bottom: 1px solid hsla(0, 0%, 24%, 1);
+
+                >div {
+                    &:first-child {
+                        align-items: center;
+                        flex-wrap: wrap;
+
+                        img {
+                            margin-right: $base;
+                        }
+
+                        p {
+                            display: flex;
+                            justify-content: space-between;
+                        }
+                    }
+                }
+
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+}
