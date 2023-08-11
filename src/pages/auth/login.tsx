@@ -1,9 +1,9 @@
 import { FC } from "react";
-import login from "../../assets/images/login.png"
+import login from "../../assets/images/login.png";
 
 const Login: FC = () => {
     return (
-        <section id="login">
+        <section id="login" className="flex">
             <figure>
                 <img src={login} alt="login" />
             </figure>

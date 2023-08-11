@@ -15,6 +15,7 @@ export const Navbar = () => {
                     </NavLink>
                     <NavLink to="/contact">Contact</NavLink>
                     <NavLink to="/login">Login</NavLink>
+                    <NavLink to="/signup">Sign Up</NavLink>
                     <SearchIcon />
                 </div>
             </nav>
