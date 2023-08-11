@@ -1,0 +1,41 @@
+.account__sidebar {
+    border: 1px solid hsla(0, 0%, 24%, 1);
+    border-radius: 0px 20px 20px 0px;
+    padding: 0 0 2rem 0;
+    max-width: 280px;
+    overflow: hidden;
+
+    a {
+        font-family: $poppins;
+        color: white;
+        display: flex;
+        align-items: center;
+        padding: .8rem $thin;
+
+        svg {
+            margin-right: 10px;
+        }
+    }
+
+    .active {
+        color: $brown100;
+        background: $light100;
+
+        svg {
+            path {
+                fill: $brown100;
+            }
+        }
+    }
+
+    #management {
+        margin-top: 2rem;
+        padding: 4rem $thin;
+        border-top: 1px solid hsla(0, 0%, 24%, 1);
+    }
+
+    @media(max-width: 650px) {
+        position: absolute;
+        display: none;
+    }
+}

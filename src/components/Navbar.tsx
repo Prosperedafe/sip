@@ -16,9 +16,10 @@ export const Navbar = () => {
                     <NavLink to="/contact">Contact</NavLink>
                     <NavLink to="/login">Login</NavLink>
                     <NavLink to="/signup">Sign Up</NavLink>
+                    <NavLink to="/account/overview">Account</NavLink>
                     <SearchIcon />
                 </div>
             </nav>
-        </header >
+        </header>
     )
 }

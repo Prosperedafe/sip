@@ -1,0 +1,87 @@
+#account__overview {
+    padding: 7rem 2rem 0 0;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: $big;
+
+    @media(max-width: 650px) {
+        grid-template-columns: 1fr;
+        padding: 7rem $base 0 $base;
+    }
+
+    &__overview {
+        border: 1px solid hsla(0, 0%, 24%, 1);
+        border-radius: 20px;
+        padding: $big;
+        color: $light100;
+        font-family: $poppins;
+
+        @media(max-width: 500px) {
+            padding: $base;
+        }
+
+        h2 {
+            font-size: $big;
+            font-family: $pacifico;
+            font-weight: 400;
+            margin-bottom: 2rem;
+        }
+
+        h3 {
+            font-size: $md;
+            font-weight: 500;
+            margin-bottom: $md;
+        }
+
+        h4 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        p {
+            color: hsla(26, 0%, 70%, 1);
+            font-weight: 300;
+        }
+
+        >section {
+            justify-content: space-between;
+            flex-wrap: wrap;
+            column-gap: 3rem;
+            row-gap: 2rem;
+
+            .details,
+            .address {
+                flex-grow: 1;
+                flex-basis: 200px;
+            }
+
+            .details {
+                p {
+                    border-radius: 20px;
+                    border: 1px solid hsla(0, 0%, 24%, 1);
+                    padding: .5rem 1.2rem;
+                    margin-bottom: $big;
+                }
+
+                a {
+                    color: $light100;
+                    background: transparent;
+                    border: 1px solid hsla(0, 0%, 24%, 1);
+                    border-radius: 20px;
+                    padding: 12px 40px;
+                    font-size: calc($base + 2px);
+                    display: block;
+                    margin-top: $big;
+                    width: fit-content;
+                }
+            }
+
+            .address {
+                p {
+                    margin-bottom: $base;
+                }
+            }
+        }
+    }
+}
