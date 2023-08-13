@@ -222,13 +222,76 @@
             margin-bottom: $big;
         }
 
-        >div {
-            gap: $base;
-            margin-bottom: $base;
+        h3 {
+            font-size: $md;
+            font-family: $poppins;
+            font-weight: 600;
+        }
 
-            &:last-child {
-                margin-bottom: 0;
+        h4 {
+            font-weight: 400;
+            font-family: $poppins;
+            font-size: calc($base + 2px);
+            color: hsla(0, 0%, 82%, 1);
+            margin: $tiny 0 $base 0;
+        }
+
+        form {
+            margin-top: $big;
+
+            >div {
+                display: flex;
+                flex-wrap: wrap;
+                gap: $big;
+
+                >div {
+                    flex-basis: 350px;
+                }
+            }
+
+
+            * {
+                font-family: $poppins;
+                font-size: $base;
+                color: $light100;
+            }
+
+            label {
+                display: block;
+                font-size: 1.25rem;
+            }
+
+            input {
+                border: 1px solid hsla(0, 0%, 24%, 1);
+                background: transparent;
+                display: block;
+                padding: .5rem $base;
+                border-radius: 20px;
+                width: 100%;
+                margin-top: .5rem;
+
+                &::placeholder {
+                    color: hsla(26, 0%, 70%, 1);
+                    font-weight: 300;
+                }
+
+                &:focus {
+                    outline: 1px solid hsla(0, 0%, 24%, 1);
+                }
+            }
+
+            button {
+                background: $light100;
+                border: 2px solid $light100;
+                border-radius: 20px;
+                padding: .6rem $md;
+                display: block;
+                margin-top: $big;
+                color: $brown100;
+                font-weight: 600;
+                font-size: 1.25rem;
             }
         }
+
     }
 }
