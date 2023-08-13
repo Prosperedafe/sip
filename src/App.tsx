@@ -7,7 +7,8 @@ import Login from './pages/auth/login';
 import SignUp from './pages/auth/signup';
 import AccountOverview from './pages/account/overview';
 import AccountOrders from './pages/account/orders';
-import SavedImtes from './pages/account/saved';
+import EditAccount from './pages/account/edit';
+import SavedItems from './pages/account/saved';
 
 function App() {
 
@@ -23,7 +24,8 @@ function App() {
         <Route path='/account/saved' element={<SignUp />} />
         <Route path='/account/orders' element={<AccountOrders />} />
         <Route path='/account/management' element={<SignUp />} />
-        <Route path='/account/saved-items' element={<SavedImtes />} />
+        <Route path='/account/saved-items' element={<SavedItems />} />
+        <Route path='/account/edit-profile/:id' element={<EditAccount />} />
       </Routes>
     </BrowserRouter>
   )

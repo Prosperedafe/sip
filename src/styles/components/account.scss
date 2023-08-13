@@ -29,9 +29,9 @@
     }
 
     #management {
-        margin-top: 2rem;
-        padding: 4rem $thin;
+        padding: 2rem 0;
         border-top: 1px solid hsla(0, 0%, 24%, 1);
+        margin-top: $base;
     }
 
     @media(max-width: 650px) {

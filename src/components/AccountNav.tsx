@@ -20,9 +20,11 @@ export const AccountNav = () => {
                     </svg>
                     <span>Saved Items</span>
                 </NavLink>
-                <NavLink id="management" to="/">
-                    <span>Account Management</span>
-                </NavLink>
+                <div id="management">
+                    <NavLink to="/account/edit-profile/propser65redfc3sdcik4">
+                        <span>Account Management</span>
+                    </NavLink>
+                </div>
             </div>
         </nav>
     )

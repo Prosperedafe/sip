@@ -4,7 +4,7 @@ import { hotDeals, mostSearched } from "../Homepage/data";
 
 
 
-const SavedImtes = () => {
+const SavedItems = () => {
 
     return (
         <section id="account__saved__items">
@@ -18,4 +18,4 @@ const SavedImtes = () => {
     )
 }
 
-export default SavedImtes;
+export default SavedItems;
