@@ -1,0 +1,120 @@
+footer {
+    background: $brown100;
+    padding: calc($big * 2) $p-fluid;
+
+    .newsletter {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1000px;
+        margin: 0 auto;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: $big;
+
+        h2 {
+            color: $light100;
+            font-size: $big;
+            font-family: $pacifico;
+            font-weight: 400;
+            margin-bottom: $base;
+        }
+
+        p {
+            color: hsla(25, 5%, 93%, 1);
+            font-family: $poppins;
+            font-size: calc($base + 2px);
+            font-weight: 300;
+        }
+
+        form {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: $base;
+
+            >div {
+                display: flex;
+                align-items: center;
+                position: relative;
+
+                svg {
+                    position: absolute;
+                    left: 24px;
+                }
+
+                input {
+                    padding: 12px 24px 12px 54px;
+                    border-radius: 20px;
+                    border: 1px solid hsla(26, 0%, 70%, 1);
+                    background: transparent;
+                    font-size: calc($base + 2px);
+                    font-family: $poppins;
+                    color: $light100;
+                    width: 100%;
+                    max-width: 260px;
+
+                    &::placeholder {
+                        color: hsla(26, 0%, 70%, 1);
+                    }
+
+                    &:focus {
+                        outline: 1px solid hsla(26, 0%, 70%, 1);
+                    }
+                }
+            }
+
+            button {
+                background: $light100;
+                border-radius: 20px;
+                border: none;
+                padding: 10px 24px 10px 24px;
+                font-family: $poppins;
+                font-size: calc($base + 4px);
+                font-weight: 500;
+            }
+        }
+    }
+
+    ul {
+        display: flex;
+        justify-content: center;
+        gap: $big;
+        flex-wrap: wrap;
+        margin-top: $big;
+
+        @media (max-width:400px) {
+            gap: $base;
+        }
+
+        li {
+            display: block;
+
+            a {
+                color: $light100;
+                font-size: 1.25rem;
+                font-family: $pacifico;
+                font-weight: 400;
+
+                @media (max-width:400px) {
+                    font-size: $base;
+                }
+            }
+        }
+    }
+
+    .social {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: $big 0;
+        gap: $base;
+    }
+
+    .copyright {
+        color: hsla(26, 0%, 70%, 1);
+        font-family: $poppins;
+        font-size: $base;
+        font-weight: 300;
+        text-align: center;
+    }
+}

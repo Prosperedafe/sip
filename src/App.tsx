@@ -9,6 +9,7 @@ import AccountOverview from './pages/account/overview';
 import AccountOrders from './pages/account/orders';
 import EditAccount from './pages/account/edit';
 import SavedItems from './pages/account/saved';
+import { Footer } from './components/Footer';
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
         <Route path='/account/saved-items' element={<SavedItems />} />
         <Route path='/account/edit-profile/:id' element={<EditAccount />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   )
 }
