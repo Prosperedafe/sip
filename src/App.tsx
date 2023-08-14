@@ -10,6 +10,7 @@ import AccountOrders from './pages/account/orders';
 import EditAccount from './pages/account/edit';
 import SavedItems from './pages/account/saved';
 import { Footer } from './components/Footer';
+import Blog from './pages/Blog/blog';
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
         <Route path='/account/management' element={<SignUp />} />
         <Route path='/account/saved-items' element={<SavedItems />} />
         <Route path='/account/edit-profile/:id' element={<EditAccount />} />
+        <Route path='/blog/all' element={<Blog />} />
       </Routes>
       <Footer />
     </BrowserRouter>

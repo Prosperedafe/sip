@@ -11,6 +11,13 @@
 @import "./styles/components/products.scss";
 @import "./styles/components/faq.scss";
 @import "./styles/components/account.scss";
+@import "./styles/components/blog.scss";
+// @import "./styles/components/account.scss";
+
+.blog__hero__section {
+    background-size: cover;
+    background: linear-gradient(hsla(0, 0%, 0%, 0.7), hsla(0, 0%, 0%, 0.7)), url("./assets/images/Outlay.png") no-repeat center;
+}
 
 * {
     margin: 0;
