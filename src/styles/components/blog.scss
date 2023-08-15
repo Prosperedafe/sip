@@ -34,3 +34,89 @@
         }
     }
 }
+
+#blog__post {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: $big $p-fluid;
+    color: $brown100;
+    column-gap: 3rem;
+    row-gap: $big;
+
+    &__post {
+        flex-grow: 1;
+        max-width: 400px;
+        margin: 0 auto;
+        flex-basis: 300px;
+
+        p {
+            font-family: $poppins;
+        }
+
+        article {
+            border-radius: 22px;
+
+            figure {
+                img {
+                    width: 100%;
+                    border-radius: 20px;
+                }
+            }
+
+            .post {
+                padding: .5rem $base $md $base;
+
+                &__title {
+                    font-size: 1.25rem;
+                    font-weight: 400;
+                    font-family: $pacifico;
+                }
+
+                &__content {
+                    font-size: calc($base - 1px);
+                    margin: .5rem 0;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 4;
+                    line-clamp: 4;
+                    -webkit-box-orient: vertical;
+                }
+
+                &__details {
+                    display: flex;
+                    align-items: flex-start;
+                    margin: .6rem 0;
+
+                    .user {
+                        margin-right: $thin;
+                    }
+
+                    .userName {
+                        font-family: $pacifico;
+                        font-weight: 400;
+                        font-size: $base;
+                    }
+
+                    .time {
+                        font-size: calc($base - 2px);
+                    }
+                }
+
+                button {
+                    display: block;
+                    margin: 0 auto;
+                    color: inherit;
+                    font-size: $base;
+                    font-weight: 500;
+                    font-family: $poppins;
+                    border: none;
+                    padding: .6rem $md;
+                    border-radius: 20px;
+                    margin-top: .5rem;
+                }
+            }
+        }
+    }
+}

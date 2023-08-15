@@ -15,8 +15,8 @@
 // @import "./styles/components/account.scss";
 
 .blog__hero__section {
-    background-size: cover;
     background: linear-gradient(hsla(0, 0%, 0%, 0.7), hsla(0, 0%, 0%, 0.7)), url("./assets/images/Outlay.png") no-repeat center;
+    background-size: cover;
 }
 
 * {
