@@ -49,3 +49,28 @@ export const BlogCard: FC<postProps> = ({ title, paragraph, image, userImg, user
         </article>
     )
 }
+interface recipes {
+    bottle: string,
+    fruit: string,
+    title: string,
+    paragraph: string,
+}
+export const Recipes: FC<recipes> = ({ bottle, fruit, title, paragraph }) => {
+    return (
+        <>
+            <div>
+                <div>
+                    <h3>{title}</h3>
+                    <p>{paragraph}</p>
+                    <button>Read More</button>
+                </div>
+            </div>
+            <picture>
+                <img src={fruit} alt={title} />
+                <figure>
+                    <img src={bottle} alt={title} />
+                </figure>
+            </picture>
+        </>
+    )
+}

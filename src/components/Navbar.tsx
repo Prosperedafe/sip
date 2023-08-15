@@ -8,7 +8,7 @@ export const Navbar = () => {
                 <MainLogo />
                 <div className="links flex items-center">
                     <NavLink className={({ isActive }) => (isActive ? "active" : "")} to="/">Home</NavLink>
-                    <NavLink to="/blog/all">Blog</NavLink>
+                    <NavLink to="/blog">Blog</NavLink>
                     <NavLink to="/cart" className="cart items-center">
                         <CartIcon />
                         <span>Cart</span>

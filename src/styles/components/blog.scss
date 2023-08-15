@@ -35,7 +35,7 @@
     }
 }
 
-#blog__post {
+#blog__post__all {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -117,6 +117,98 @@
                     margin-top: .5rem;
                 }
             }
+        }
+    }
+}
+
+.blog__nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 $p-fluid;
+    row-gap: $base;
+    column-gap: $big;
+    max-width: 1400px;
+    margin: $big auto 0 auto;
+
+    button {
+        display: block;
+        flex-grow: 1;
+        font-size: 1.2rem;
+        font-family: $poppins;
+        color: hsla(0, 0%, 82%, 1);
+        padding: .8rem $md;
+        border: none;
+        background: transparent;
+    }
+
+    .active {
+        color: $brown100;
+        background: $light100;
+    }
+}
+
+#blog__post__recipes {
+    padding: $big 0;
+    color: $brown100;
+
+    >section {
+        padding: $big $p-fluid;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+
+            >div {
+                display: flex;
+                justify-content: flex-end;
+
+                >div {
+                    max-width: fit-content;
+                }
+            }
+        }
+
+        div {
+            flex-grow: 1;
+            flex-basis: 300px;
+
+            p {
+                max-width: 360px;
+            }
+        }
+
+        picture {
+            flex-grow: 1;
+            flex-basis: 300px;
+            position: relative;
+
+            >figure {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        h3 {
+            font-weight: 400;
+            font-size: 3rem;
+            font-family: $pacifico;
+            margin-bottom: $base;
+        }
+
+        button,
+        p {
+            font-family: $poppins;
+            font-size: calc($base + 2px);
+        }
+
+        button {
+            border: none;
+            background: transparent;
+            font-weight: 600;
         }
     }
 }

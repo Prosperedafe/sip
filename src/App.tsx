@@ -28,7 +28,7 @@ function App() {
         <Route path='/account/management' element={<SignUp />} />
         <Route path='/account/saved-items' element={<SavedItems />} />
         <Route path='/account/edit-profile/:id' element={<EditAccount />} />
-        <Route path='/blog/all' element={<Blog />} />
+        <Route path='/blog' element={<Blog />} />
       </Routes>
       <Footer />
     </BrowserRouter>
