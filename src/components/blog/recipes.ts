@@ -11,7 +11,7 @@ import pineappleBottle from "../../assets/images/can pineapple 1.png"
 import melonFruit from "../../assets/images/Melon chunks.png"
 import melonBottle from "../../assets/images/watermelon 1.png"
 
-export const recipes: Array<object> = [
+export const recipes: Array<object | Array<object>> = [
     {
         id: 1,
         title: "Mixed Fruits",
@@ -19,6 +19,11 @@ export const recipes: Array<object> = [
         background: "hsla(61, 58%, 52%, 1)",
         bottle: mixedBottle,
         fruit: mixedFruit,
+        step1: [
+            {
+                step: "",
+            }
+        ]
     },
     {
         id: 2,

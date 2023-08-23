@@ -129,6 +129,7 @@
     column-gap: $big;
     max-width: 1400px;
     margin: $big auto 0 auto;
+    flex-wrap: wrap;
 
     button {
         display: block;
@@ -154,6 +155,7 @@
     >section {
         padding: $big $p-fluid;
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
 
@@ -176,6 +178,10 @@
 
             p {
                 max-width: 360px;
+
+                @media (max-width: 665px) {
+                    max-width: 100%;
+                }
             }
         }
 
@@ -205,10 +211,12 @@
             font-size: calc($base + 2px);
         }
 
-        button {
+        a {
             border: none;
             background: transparent;
             font-weight: 600;
+            font-family: $poppins;
+            color: inherit;
         }
     }
 }

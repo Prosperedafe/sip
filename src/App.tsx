@@ -11,6 +11,7 @@ import EditAccount from './pages/account/edit';
 import SavedItems from './pages/account/saved';
 import { Footer } from './components/Footer';
 import Blog from './pages/Blog/blog';
+import FruitRecipe from './pages/fruitRecipe/recipe';
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
         <Route path='/account/saved-items' element={<SavedItems />} />
         <Route path='/account/edit-profile/:id' element={<EditAccount />} />
         <Route path='/blog' element={<Blog />} />
+        <Route path='blog/recipe/:fruit' element={<FruitRecipe />} />
       </Routes>
       <Footer />
     </BrowserRouter>

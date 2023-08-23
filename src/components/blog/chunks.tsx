@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { Link } from "react-router-dom";
 
 interface contentprops {
     heading: string,
@@ -54,15 +55,19 @@ interface recipes {
     fruit: string,
     title: string,
     paragraph: string,
+    saveId?: any,
 }
-export const Recipes: FC<recipes> = ({ bottle, fruit, title, paragraph }) => {
+
+const getPathName = JSON.parse(localStorage.getItem("") as string)
+
+export const Recipes: FC<recipes> = ({ bottle, fruit, title, paragraph, saveId }) => {
     return (
         <>
             <div>
                 <div>
                     <h3>{title}</h3>
                     <p>{paragraph}</p>
-                    <button>Read More</button>
+                    <Link onClick={saveId} to={`recipe/${getPathName}`}>Read More</Link>
                 </div>
             </div>
             <picture>

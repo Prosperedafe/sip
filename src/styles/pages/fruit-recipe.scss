@@ -1,0 +1,63 @@
+.fruit__recipe {
+    padding: 6rem $p-fluid;
+
+    * {
+        color: $brown100;
+    }
+
+    p {
+        font-family: $poppins;
+        font-size: $base;
+    }
+
+
+    h3 {
+        font-size: 3rem;
+        font-weight: 400;
+        font-family: $pacifico;
+
+        @media(max-width: 500px) {
+            font-size: 2rem;
+        }
+    }
+
+    p {
+        margin: .5rem 0;
+    }
+
+    &__name {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: $big;
+
+        >div {
+            flex-grow: 1;
+            flex-basis: 300px;
+
+            p {
+                max-width: 360px;
+
+                @media (max-width: 700px) {
+                    max-width: 100%;
+                }
+            }
+        }
+
+        picture {
+            flex-grow: 1;
+            flex-basis: 300px;
+            position: relative;
+            flex-grow: 1;
+            flex-basis: 300px;
+
+            >figure {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+}

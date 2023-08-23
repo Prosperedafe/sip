@@ -4,12 +4,13 @@ footer {
 
     .newsletter {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         max-width: 1000px;
         margin: 0 auto;
         align-items: flex-start;
         flex-wrap: wrap;
-        gap: $big;
+        column-gap: 8vw;
+        row-gap: $big;
 
         h2 {
             color: $light100;
@@ -29,6 +30,7 @@ footer {
         form {
             display: flex;
             align-items: center;
+            justify-content: center;
             flex-wrap: wrap;
             gap: $base;
 

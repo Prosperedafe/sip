@@ -2,9 +2,25 @@ import { posts } from "../../components/blog/posts";
 import { recipes } from "../../components/blog/recipes";
 import { useState } from "react"
 import { BlogCard, BlogHero, Recipes } from "../../components/blog/chunks";
+import { useNavigate } from "react-router-dom";
 
 const Blog = () => {
+    // const navigate = useNavigate()
     const [activePost, setActiveBlog] = useState<string>("all")
+    // const [option, setOption] = useState<object>({})
+    // const handleClick = (e: any, data: any) => {
+    //     const update = { ...option }
+    //     update[data.id] = !option[data.id]
+    //     setOption(update)
+    //     console.log(update);
+    //     for (const key in option) {
+    //         localStorage.setItem("fruit__un-iD", JSON.stringify(key));
+    //         console.log(key);
+    //     }
+    //     if (localStorage.getItem("fruit__un-iD") !== null && localStorage.getItem("fruit__un-iD") !== "") {
+    //         navigate("/recipe/:fruit")
+    //     }
+    // };
 
     return (
         <section id="blog">
