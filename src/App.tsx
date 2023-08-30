@@ -14,7 +14,7 @@ import Blog from './pages/Blog/blog';
 import FruitRecipe from './pages/fruitRecipe/recipe';
 
 function App() {
-
+  const checkStorage = JSON.parse(localStorage.getItem("fruit__un-iD") as string);
   return (
     <BrowserRouter>
       <Navbar />
@@ -30,7 +30,7 @@ function App() {
         <Route path='/account/saved-items' element={<SavedItems />} />
         <Route path='/account/edit-profile/:id' element={<EditAccount />} />
         <Route path='/blog' element={<Blog />} />
-        <Route path='blog/recipe/:fruit' element={<FruitRecipe />} />
+        {checkStorage !== null ? <Route path='blog/recipe/:fruit' element={<FruitRecipe />} /> : null}
       </Routes>
       <Footer />
     </BrowserRouter>

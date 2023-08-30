@@ -1,6 +1,6 @@
 import { posts } from "../../components/blog/posts";
 import { recipes } from "../../components/blog/recipes";
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { BlogCard, BlogHero, Recipes } from "../../components/blog/chunks";
 import { useNavigate } from "react-router-dom";
 
@@ -13,11 +13,21 @@ const Blog = () => {
     for (const key in option) {
         localStorage.setItem("fruit__un-iD", JSON.stringify(key));
     }
+    const checkStorage = JSON.parse(localStorage.getItem("fruit__un-iD") as string);
+
     const handleClick = (data: object) => {
         const update = { ...option }
         update[data.id] = !option[data.id]
         setOption(update)
     };
+
+    useEffect(() => {
+        setTimeout(() => {
+            if (checkStorage !== null) {
+                navigate("recipe/melon")
+            }
+        }, 200);
+    })
 
     return (
         <section id="blog">
@@ -44,8 +54,7 @@ const Blog = () => {
                     {recipes.map((recipe: any) => {
                         return (
                             <section style={{ background: recipe.background }} key={recipe.id}>
-                                <button onClick={() => handleClick(recipe)}>save</button>
-                                <Recipes title={recipe.title} paragraph={recipe.paragraph} bottle={recipe.bottle} fruit={recipe.fruit} />
+                                <Recipes onClick={() => handleClick(recipe)} title={recipe.title} paragraph={recipe.paragraph} bottle={recipe.bottle} fruit={recipe.fruit} />
                             </section>
                         )
                     })}

@@ -54,10 +54,10 @@ interface recipes {
     fruit: string,
     title: string,
     paragraph: string,
-    saveId?: any,
+    onClick: any;
 }
 
-export const Recipes: FC<recipes> = ({ bottle, fruit, title, paragraph, saveId }) => {
+export const Recipes: FC<recipes> = ({ bottle, fruit, title, paragraph, onClick }) => {
 
     return (
         <>
@@ -65,7 +65,7 @@ export const Recipes: FC<recipes> = ({ bottle, fruit, title, paragraph, saveId }
                 <div>
                     <h3>{title}</h3>
                     <p>{paragraph}</p>
-                    <button onClick={saveId}>Read More</button>
+                    <button onClick={onClick}>Read More</button>
                 </div>
             </div>
             <picture>
