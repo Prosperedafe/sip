@@ -1,4 +1,5 @@
 import { recipes } from "../../components/blog/recipes";
+import { BaseColumn, ReverseColumn } from "./Layout";
 
 const FruitRecipe = () => {
 
@@ -21,17 +22,12 @@ const FruitRecipe = () => {
                         </figure>
                     </picture>
                 </section>
-                <section className="fruit__recipe__step1">
-                    <section>
-                        <h3>{fruitDrink?.steps?.heading}</h3>
-                        <ul>
-                            <li>{fruitDrink?.steps?.step}</li>
-                        </ul>
-                    </section>
-                    <figure>
-                        <img src={fruitDrink?.steps?.img} alt={fruitDrink?.title} />
-                    </figure>
-                </section>
+                {fruitDrink?.steps1 ? <ReverseColumn step={fruitDrink?.steps1} /> : <></>}
+                {fruitDrink?.steps2 ? <BaseColumn step={fruitDrink?.steps2} /> : <></>}
+                {fruitDrink?.steps3 ? <ReverseColumn step={fruitDrink?.steps3} /> : <></>}
+                {fruitDrink?.steps4 ? <BaseColumn step={fruitDrink?.steps4} /> : <></>}
+                {fruitDrink?.steps5 ? <ReverseColumn step={fruitDrink?.steps5} /> : <></>}
+                {fruitDrink?.steps6 ? <BaseColumn step={fruitDrink?.steps6} /> : <></>}
             </section>
         </>
     )

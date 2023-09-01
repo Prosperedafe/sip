@@ -1,33 +1,34 @@
 import { posts } from "../../components/blog/posts";
 import { recipes } from "../../components/blog/recipes";
-import { useState, useEffect } from "react"
-import { BlogCard, BlogHero, Recipes } from "../../components/blog/chunks";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { BlogCard, BlogHero, Recipes } from "../../components/blog/chunks";
 
 const Blog = () => {
     const navigate = useNavigate()
     const [activePost, setActiveBlog] = useState<string>("all")
 
-    const [option, setOption] = useState<object>({})
+    interface Provider {
+        id: number,
+    }
+
+    const [option, setOption] = useState<any>({})
 
     for (const key in option) {
         localStorage.setItem("fruit__un-iD", JSON.stringify(key));
     }
     const checkStorage = JSON.parse(localStorage.getItem("fruit__un-iD") as string);
 
-    const handleClick = (data: object) => {
+    const handleClick = (data: Provider) => {
         const update = { ...option }
         update[data.id] = !option[data.id]
         setOption(update)
-    };
-
-    useEffect(() => {
         setTimeout(() => {
             if (checkStorage !== null) {
                 navigate("recipe/melon")
             }
-        }, 200);
-    })
+        }, 300);
+    };
 
     return (
         <section id="blog">

@@ -149,7 +149,7 @@
 }
 
 #blog__post__recipes {
-    padding: $big 0;
+    padding: $big 0 0 0;
     color: $brown100;
 
     >section {
@@ -177,9 +177,9 @@
             flex-basis: 300px;
 
             p {
-                max-width: 360px;
+                max-width: 460px;
 
-                @media (max-width: 665px) {
+                @media (max-width: 750px) {
                     max-width: 100%;
                 }
             }
@@ -211,7 +211,7 @@
             font-size: calc($base + 2px);
         }
 
-        a {
+        button {
             border: none;
             background: transparent;
             font-weight: 600;
