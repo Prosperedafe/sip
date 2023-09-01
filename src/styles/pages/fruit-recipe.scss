@@ -129,11 +129,43 @@
                 margin-left: auto;
             }
         }
+
+        @media(max-width: 650px) {
+            grid-template-columns: 1fr;
+
+            section {
+                order: 1;
+            }
+
+            figure {
+                order: 2;
+
+                img {
+                    margin: auto;
+                }
+            }
+        }
     }
 
     .row {
         display: grid;
         grid-template-columns: .9fr 1.1fr;
+
+        @media(max-width: 650px) {
+            grid-template-columns: 1fr;
+
+            section {
+                order: 1;
+            }
+
+            figure {
+                order: 2;
+
+                img {
+                    margin: auto;
+                }
+            }
+        }
     }
 
 }

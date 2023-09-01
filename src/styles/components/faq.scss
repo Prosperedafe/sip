@@ -33,6 +33,18 @@
                 display: none;
             }
 
+            list-style: none;
+            list-style-type: none;
+            -webkit-appearance: none;
+
+            &::-webkit-details-marker {
+                display: none;
+            }
+
+            &::marker {
+                display: none;
+            }
+
             p,
             summary {
                 color: $light100;
@@ -47,6 +59,17 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                list-style: none;
+                list-style-type: none;
+                -webkit-appearance: none;
+
+                &::-webkit-details-marker {
+                    display: none;
+                }
+
+                &::marker {
+                    display: none;
+                }
             }
 
             >p {
