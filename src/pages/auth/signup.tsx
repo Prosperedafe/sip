@@ -1,5 +1,6 @@
 import { FC } from "react";
 import signup from "../../assets/images/signup.png";
+import { Link } from "react-router-dom";
 
 const SignUp: FC = () => {
     return (
@@ -18,6 +19,7 @@ const SignUp: FC = () => {
                         <input type="text" placeholder="enter 8 characters" />
                         <button>Sign Up</button>
                     </form>
+                    <p>Already have an account? <Link to="/login">Login</Link></p>
                 </section>
                 <figure>
                     <img src={signup} alt="sign up" />

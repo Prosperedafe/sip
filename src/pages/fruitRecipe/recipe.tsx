@@ -1,3 +1,5 @@
+import { BlogCard } from "../../components/blog/chunks";
+import { posts } from "../../components/blog/posts";
 import { recipes } from "../../components/blog/recipes";
 import { BaseColumn, ReverseColumn } from "./Layout";
 
@@ -9,7 +11,7 @@ const FruitRecipe = () => {
 
     return (
         <>
-            <section style={{ background: fruitDrink?.background }} className="fruit__recipe">
+            <article style={{ background: fruitDrink?.background }} className="fruit__recipe">
                 <section className="fruit__recipe__name">
                     <div>
                         <h2>{fruitDrink?.title}</h2>
@@ -28,6 +30,18 @@ const FruitRecipe = () => {
                 {fruitDrink?.steps4 ? <BaseColumn step={fruitDrink?.steps4} /> : <></>}
                 {fruitDrink?.steps5 ? <ReverseColumn step={fruitDrink?.steps5} /> : <></>}
                 {fruitDrink?.steps6 ? <BaseColumn step={fruitDrink?.steps6} /> : <></>}
+            </article>
+            <section id="related__articles">
+                <h3>Related Articles</h3>
+                <div>
+                    {posts.slice(0, 3).map((post: any) => {
+                        return (
+                            <div key={post.id} id="blog__post__all__post">
+                                <BlogCard backgroundColor={post.background} image={post.image} title={post.title} paragraph={post.content} userName={post.userName} userImg={post.userImg} time={post.time} />
+                            </div>
+                        )
+                    })}
+                </div>
             </section>
         </>
     )

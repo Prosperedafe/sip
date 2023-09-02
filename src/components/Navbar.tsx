@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { CartIcon, MainLogo, SearchIcon } from "./icons/MainLogo";
+import { CartIcon, MainLogo } from "./icons/MainLogo";
 
 export const Navbar = () => {
     return (
@@ -14,10 +14,8 @@ export const Navbar = () => {
                         <span>Cart</span>
                     </NavLink>
                     <NavLink to="/contact">Contact</NavLink>
-                    <NavLink to="/login">Login</NavLink>
                     <NavLink to="/signup">Sign Up</NavLink>
                     <NavLink to="/account/overview">Account</NavLink>
-                    <SearchIcon />
                 </div>
             </nav>
         </header>

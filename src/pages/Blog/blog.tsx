@@ -1,6 +1,6 @@
 import { posts } from "../../components/blog/posts";
 import { recipes } from "../../components/blog/recipes";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { BlogCard, BlogHero, Recipes } from "../../components/blog/chunks";
 
@@ -18,17 +18,24 @@ const Blog = () => {
         localStorage.setItem("fruit__un-iD", JSON.stringify(key));
     }
     const checkStorage = JSON.parse(localStorage.getItem("fruit__un-iD") as string);
+    const fruitId = parseFloat(checkStorage);
+
+    const fruitDrink = recipes.find(drinkId => drinkId.id === fruitId);
 
     const handleClick = (data: Provider) => {
         const update = { ...option }
         update[data.id] = !option[data.id]
         setOption(update)
-        setTimeout(() => {
-            if (checkStorage !== null) {
-                navigate("recipe/melon")
-            }
-        }, 300);
+        if (checkStorage !== null || undefined) {
+            setTimeout(() => {
+                navigate(`recipe/${JSON.parse(localStorage.getItem("fruit_name") as string)}`)
+            }, 300);
+        }
     };
+
+    useEffect(() => {
+        localStorage.setItem("fruit_name", JSON.stringify(fruitDrink?.route))
+    }, [handleClick])
 
     return (
         <section id="blog">

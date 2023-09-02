@@ -169,3 +169,30 @@
     }
 
 }
+
+#related__articles {
+    padding: 2rem clamp(0.9rem, 5vw, 20rem);
+    background: $light100;
+
+    h3 {
+        font-size: 2.5rem;
+        font-weight: 400;
+        font-family: $pacifico;
+        margin-bottom: $big;
+        line-height: 1.5;
+        color: $brown100;
+
+        @media(max-width: 500px) {
+            font-size: 1.5rem;
+        }
+    }
+
+    >div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        color: hsl(26, 100%, 10%);
+        column-gap: 3rem;
+        row-gap: 2rem;
+    }
+}
