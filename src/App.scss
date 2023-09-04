@@ -13,6 +13,7 @@
 @import "./styles/components/account.scss";
 @import "./styles/components/blog.scss";
 @import "./styles/pages/fruit-recipe.scss";
+@import "./styles/pages/cart.scss";
 
 .blog__hero__section {
     background: linear-gradient(hsla(0, 0%, 0%, 0.7), hsla(0, 0%, 0%, 0.7)), url("./assets/images/Outlay.png") no-repeat center;
@@ -29,19 +30,42 @@ html {
     scroll-behavior: smooth;
     background: #222;
 
-    a {
-        text-decoration: none;
+    body {
+        position: relative;
+
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        img,
+        svg {
+            max-width: 100%;
+        }
+
+        button {
+            cursor: pointer;
+        }
     }
 
-    li {
-        list-style: none;
-    }
+}
 
-    img {
-        max-width: 100%;
-    }
+$scroll-bar-color: hsl(0, 0%, 77%, .5);
+$scroll-bar-bg-color: hsla(0, 0%, 13%, 1);
 
-    button {
-        cursor: pointer;
-    }
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+    background: $scroll-bar-bg-color;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: $scroll-bar-color;
+    border-radius: 20px;
+    border: 3px solid $scroll-bar-bg-color;
 }

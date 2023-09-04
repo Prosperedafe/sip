@@ -1,0 +1,289 @@
+#cart {
+    top: 0;
+    position: fixed;
+    z-index: 1000;
+    background: hsla(0, 0%, 13%, 0.9);
+    width: 100%;
+    max-width: 700px;
+    right: 0;
+    border-radius: 20px 0px 0px 0px;
+    overflow-y: scroll;
+    max-height: 100vh;
+    padding: $base $base calc($big * 2) $base;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    @media(min-width: 700px) {
+        padding: $big $big calc($big * 2) $big;
+    }
+
+    .light-brown {
+        color: $brown100 !important;
+        background: $light100;
+        font-family: $poppins;
+        font-size: 1.2rem;
+        padding: .5rem 1.2rem;
+        font-weight: 500;
+        border-radius: 20px;
+        border: none;
+
+        @media(max-width: 450px) {
+            font-size: $base;
+        }
+    }
+
+
+    .back {
+        display: flex;
+        align-items: center;
+        font-family: $poppins;
+        font-size: 1.1rem;
+        color: $light100;
+
+        svg {
+            margin-right: 10px;
+        }
+    }
+
+    h2 {
+        text-align: center;
+        font-family: $poppins;
+        font-size: 1.8rem;
+        color: $light100;
+        font-weight: 600;
+        margin: $md 0;
+
+        @media(max-width: 600px) {
+            font-size: $md;
+        }
+    }
+
+    svg {
+        pointer-events: none;
+    }
+
+    button {
+        background: transparent;
+        border: none;
+
+        &:has(:hover, :focus, :active) {
+            background: transparent;
+        }
+    }
+
+    p {
+        font-family: $poppins;
+        color: hsla(0, 0%, 82%, 1);
+    }
+
+    .hide-page {
+        max-width: fit-content;
+        margin-left: auto;
+        cursor: pointer;
+    }
+
+    &__items {
+        padding: $base 0;
+        color: $light100;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        gap: $base;
+        flex-wrap: wrap;
+
+        .item {
+            display: flex;
+            align-items: center;
+
+            &__image {
+                max-height: 110px;
+                margin-right: $md;
+            }
+
+            h3 {
+                font-size: 1.25rem;
+                font-family: $pacifico;
+                font-weight: 300;
+                margin-bottom: $base;
+
+                @media(max-width: 600px) {
+                    font-size: $base;
+                }
+            }
+
+            .actions {
+                display: flex;
+                border-radius: 20px;
+                border: 1px solid hsla(210, 30%, 96%, 1);
+                max-width: fit-content;
+                align-items: center;
+                padding: 6px 15px;
+
+                p {
+                    margin: 0 24px;
+                    color: hsla(0, 0%, 82%, 1);
+                }
+            }
+        }
+
+        .remove__item {
+            p {
+                font-size: $md;
+                font-weight: 500;
+            }
+
+            button {
+                width: fit-content;
+                margin-left: auto;
+                display: block;
+                margin-bottom: $base;
+            }
+        }
+    }
+
+    &__total {
+        border-top: 1px solid hsla(26, 0%, 70%, .5);
+        border-bottom: 1px solid hsla(210, 30%, 96%, .5);
+        padding: $big 0;
+
+        >div {
+            display: flex;
+            justify-content: space-between;
+            padding: $tiny 0;
+            gap: $base;
+
+            p:first-child {
+                font-size: calc($base + 2px);
+            }
+
+            p {
+                &:nth-child(2) {
+                    text-align: right;
+                }
+            }
+
+            &:last-child {
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-top: $big;
+            }
+        }
+    }
+
+    .checkout {
+        .cards {
+            margin-top: 2rem;
+
+            svg {
+                display: block;
+                margin: 0 auto;
+            }
+        }
+
+        .atm {
+            width: fit-content;
+            margin: auto;
+            margin: $base auto;
+
+            img {
+                pointer-events: none;
+            }
+        }
+
+    }
+
+    .payment__info {
+        margin-top: 3rem;
+
+        * {
+            font-family: $poppins;
+            color: $light100;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+
+            @media(max-width: 500px) {
+                grid-template-columns: 1fr;
+            }
+
+            >div {
+
+                label {
+                    font-size: 1.2rem;
+                    display: block;
+                    margin-bottom: 8px;
+                }
+
+                input {
+                    display: block;
+                    background-color: transparent;
+                    border: 1px solid hsla(0, 0%, 24%, 1);
+                    border-radius: 20px;
+                    padding: 10px 24px;
+                    font-size: $base;
+                    width: 100%;
+
+                    &:is(:focus) {
+                        outline: 1px solid hsla(26, 0%, 70%, .4);
+                    }
+
+                    &::placeholder {
+                        color: hsla(26, 0%, 70%, 1);
+                    }
+                }
+
+            }
+
+            .card-number {
+                div {
+                    position: relative;
+
+                    input {
+                        padding-right: 55px;
+                    }
+
+                    img {
+                        pointer-events: none;
+                        position: absolute;
+                        right: 24px;
+                        bottom: 15px;
+                    }
+                }
+
+            }
+        }
+
+        .total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: $base;
+            margin: 4rem 0;
+
+            p {
+                &:nth-child(1) {
+                    font-size: 1.2rem;
+                }
+
+                &:nth-child(2) {
+                    font-size: 1.4rem;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        .pay {
+            width: 100%;
+            max-width: 400px;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+}

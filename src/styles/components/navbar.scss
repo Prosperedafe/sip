@@ -6,8 +6,20 @@
 
     &__nav {
         padding: $sm $p-fluid;
+        position: relative;
 
         & .links {
+            .close-nav {
+                position: absolute;
+                right: $big;
+                top: calc($big + 5px);
+                cursor: pointer;
+
+                @media (min-width: 1120px) {
+                    display: none;
+                }
+            }
+
             a {
                 font-size: $md;
                 font-family: $pacifico;
@@ -27,6 +39,8 @@
             .cart {
                 gap: $tiny;
                 display: flex;
+                position: relative;
+                cursor: pointer;
             }
 
             .active {
@@ -35,6 +49,46 @@
                 * {
                     fill: $light100;
                 }
+            }
+
+            @media (max-width: 1120px) {
+                position: absolute;
+                flex-direction: column;
+                top: -20%;
+                opacity: 0;
+                pointer-events: none;
+                background: hsla(0, 0%, 13%, .95);
+                padding: 2rem 0;
+                min-height: 100vh;
+                overflow-y: scroll;
+                align-items: flex-start;
+                right: 0;
+                width: 100%;
+                max-width: 400px;
+                transition: all .3s ease-in-out;
+
+                a {
+                    margin-bottom: $big;
+                }
+
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+            }
+        }
+
+        .show {
+            top: 0;
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .mobile__nav__toggler {
+            @media (min-width: 1120px) {
+                display: none;
             }
         }
     }
