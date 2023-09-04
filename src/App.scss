@@ -33,6 +33,11 @@ html {
     body {
         position: relative;
 
+        @media (max-width: 480px) {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
         a {
             text-decoration: none;
         }
@@ -58,6 +63,10 @@ $scroll-bar-bg-color: hsla(0, 0%, 13%, 1);
 
 body::-webkit-scrollbar {
     width: 12px;
+
+    @media (max-width: 480px) {
+        display: none;
+    }
 }
 
 body::-webkit-scrollbar-track {
