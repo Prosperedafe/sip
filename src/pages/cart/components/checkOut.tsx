@@ -1,10 +1,39 @@
 import atm from "../../../assets/images/atm.png"
+import { FC, useState } from "react";
+import { Back } from "../cart";
 import cardLogo from "../../../assets/icons/cardlogo.png";
 
-export const CheckOut = () => {
+interface actions {
+    mode: any
+    pay: any
+    summary: any
+    succesful: any
+}
+
+export const CheckOut: FC<actions> = ({ mode, summary, succesful }) => {
+
+    const [payment, setPayment] = useState<boolean>(false);
+
+    const payForItem = () => {
+        setPayment(true)
+        setTimeout(() => {
+            succesful()
+        }, 2000);
+    }
+
     return (
         <>
             <section className="checkout">
+                <div className="hide-page">
+                    <Back summary={summary} />
+                    <div onClick={mode} className="icon">
+                        <svg width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="20" fill="white" />
+                            <path d="M13 13L27.2418 27.0418" stroke="#51526C" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M27.2422 13L13.0004 27.0418" stroke="#51526C" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                    </div>
+                </div>
                 <h2>Checkout</h2>
                 <div className="cards">
                     <svg width="500" height="150" viewBox="0 0 663 179" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -67,7 +96,7 @@ export const CheckOut = () => {
                     <p>Total Amount</p>
                     <p>$69.90</p>
                 </div>
-                <button className="light-brown pay">Pay Now</button>
+                <button style={{ opacity: payment ? ".6" : "1" }} onClick={payForItem} className="light-brown pay">{payment ? "Loading..." : "Pay Now"}</button>
             </section>
         </>
     )

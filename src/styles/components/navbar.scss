@@ -8,10 +8,14 @@
         padding: $sm $p-fluid;
         position: relative;
 
+        @media (max-width: 600px) {
+            padding: .4rem $p-fluid;
+        }
+
         & .links {
             .close-nav {
                 position: absolute;
-                right: $big;
+                right: $p-fluid;
                 top: calc($big + 5px);
                 cursor: pointer;
 
@@ -87,6 +91,20 @@
         }
 
         .mobile__nav__toggler {
+            cursor: pointer;
+
+            span {
+                display: block;
+                width: 25px;
+                height: 3px;
+                background: hsla(26, 0%, 70%, 1);
+                border-radius: 10px;
+
+                &:nth-child(2) {
+                    margin: 5px 0;
+                }
+            }
+
             @media (min-width: 1120px) {
                 display: none;
             }

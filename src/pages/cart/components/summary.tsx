@@ -3,12 +3,22 @@ import { cartItems } from "../cartItems";
 
 interface actions {
     mode: any
-    checkOut: any
+    checkOut?: any
 }
 
-export const Summary: FC<actions> = ({ checkOut }) => {
+export const Summary: FC<actions> = ({ checkOut, mode }) => {
     return (
         <section id="cart__summary">
+            <div className="hide-page">
+                <span></span>
+                <div onClick={mode} className="icon">
+                    <svg width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="20" fill="white" />
+                        <path d="M13 13L27.2418 27.0418" stroke="#51526C" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M27.2422 13L13.0004 27.0418" stroke="#51526C" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                </div>
+            </div>
             <h2>Cart Summary</h2>
             {cartItems.map((items: any) => {
                 return (
