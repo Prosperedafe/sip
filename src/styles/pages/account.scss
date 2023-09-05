@@ -38,12 +38,21 @@
             font-size: $md;
             font-weight: 500;
             margin-bottom: $md;
+
+            @media (max-width: 480px) {
+                font-size: 1.3rem;
+                font-weight: 500;
+            }
         }
 
         h4 {
             font-size: 1.25rem;
             font-weight: 500;
             margin-bottom: 5px;
+
+            @media (max-width: 480px) {
+                font-size: 1.05rem;
+            }
         }
 
         p {
@@ -133,6 +142,11 @@
                 font-family: $pacifico;
                 font-weight: 400;
                 margin-bottom: .4rem;
+
+                @media (max-width: 480px) {
+                    font-size: 1.3rem;
+                    font-weight: 500;
+                }
             }
 
             p {
@@ -247,6 +261,7 @@
 
             @media (max-width: 480px) {
                 font-size: $md;
+                margin-bottom: $base;
             }
         }
 
@@ -254,6 +269,11 @@
             font-size: $md;
             font-family: $poppins;
             font-weight: 600;
+
+            @media (max-width: 480px) {
+                font-size: 1.3rem;
+                font-weight: 500;
+            }
         }
 
         h4 {
@@ -262,6 +282,10 @@
             font-size: calc($base + 2px);
             color: hsla(0, 0%, 82%, 1);
             margin: $tiny 0 $base 0;
+
+            @media (max-width: 480px) {
+                font-size: 1.05rem;
+            }
         }
 
         form {
@@ -287,6 +311,10 @@
             label {
                 display: block;
                 font-size: 1.25rem;
+
+                @media (max-width: 480px) {
+                    font-size: $base;
+                }
             }
 
             input {
