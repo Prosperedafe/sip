@@ -7,6 +7,7 @@ interface actions {
     mode?: any;
     summary?: any
     hideNav?: any
+    redirect?: any
 }
 
 export const Back: FC<actions> = ({ summary }) => {
@@ -20,7 +21,7 @@ export const Back: FC<actions> = ({ summary }) => {
     )
 }
 
-const Cart: FC<actions> = ({ mode, hideNav }) => {
+const Cart: FC<actions> = ({ mode, hideNav, redirect }) => {
     const [display, setDisplay] = useState<string>("summary")
 
     const checkOut = () => setDisplay("checkout")
@@ -32,7 +33,7 @@ const Cart: FC<actions> = ({ mode, hideNav }) => {
         <section id="cart">
             {display === "summary" ? <Summary mode={mode} checkOut={checkOut} /> : null}
             {display === "checkout" ? <CheckOut pay={payment} summary={summary} succesful={succesful} mode={mode} /> : null}
-            {display === "succesful" ? <Succesful pay={payment} hideNav={hideNav} check={checkOut} mode={mode} /> : null}
+            {display === "succesful" ? <Succesful mode={mode} hideNav={hideNav} check={checkOut} redirect={redirect} /> : null}
         </section>
     )
 }

@@ -6,15 +6,15 @@ import delivery from "../../../assets/images/undraw_on_the_way_re_swjt 1.png"
 
 interface actions {
     mode: any
-    pay: any
     check: any
-    hideNav: any
+    hideNav?: any
+    redirect: any
 }
 
-export const Succesful: FC<actions> = ({ mode, check, hideNav }) => {
+export const Succesful: FC<actions> = ({ mode, check, redirect }) => {
     const handleClick = () => {
         mode()
-        hideNav()
+        redirect()
     }
     return (
         <section className="succesful">

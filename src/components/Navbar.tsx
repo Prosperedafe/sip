@@ -10,16 +10,19 @@ export const Navbar = () => {
 
     const setCartMode = () => {
         setShowCart(!showCart)
+        setShowNav(false)
     }
     const changeNavState = () => {
         setShowNav(!showNav)
     }
-
+    const redirect = () => {
+        setShowCart(!showCart)
+    }
     return (
         <header className="main__header">
             <nav className="main__header__nav flex space-between items-center">
                 <MainLogo />
-                <div style={{ opacity: showCart ? "0" : "" }} className={showNav ? "links flex items-center show" : "links flex items-center"}>
+                <div className={showNav ? "links flex items-center show" : "links flex items-center"}>
                     <svg onClick={changeNavState} className="close-nav" width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="40" height="40" rx="20" fill="white" />
                         <path d="M13 13L27.2418 27.0418" stroke="#51526C" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
@@ -40,7 +43,7 @@ export const Navbar = () => {
                     <span></span>
                     <span></span>
                 </div>
-                {showCart ? <Cart mode={setCartMode} hideNav={changeNavState} /> : <></>}
+                {showCart ? <Cart mode={setCartMode} hideNav={changeNavState} redirect={redirect} /> : <></>}
             </nav>
         </header>
     )
