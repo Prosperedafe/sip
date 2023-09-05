@@ -9,6 +9,10 @@
     position: relative;
     isolation: isolate;
 
+    @media (max-width: 850px) {
+        margin-bottom: $big;
+    }
+
     section {
         flex-basis: 300px;
         flex-grow: 1;

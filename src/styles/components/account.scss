@@ -34,8 +34,24 @@
         margin-top: $base;
     }
 
-    @media(max-width: 650px) {
-        position: absolute;
-        display: none;
+    @media(max-width: 750px) {
+        height: fit-content;
+
+        a {
+            margin-bottom: 20px;
+
+            @media (max-width: 480px) {
+                padding: 10px;
+                justify-content: center;
+            }
+
+            span {
+                display: none;
+            }
+
+            svg {
+                margin-right: 0;
+            }
+        }
     }
 }

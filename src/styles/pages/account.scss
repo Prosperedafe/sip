@@ -3,10 +3,13 @@
     display: grid;
     grid-template-columns: 280px 1fr;
     gap: $big;
+    margin-bottom: $big;
+    position: relative;
 
-    @media(max-width: 650px) {
-        grid-template-columns: 1fr;
-        padding: 7rem $base 0 $base;
+    @media(max-width: 750px) {
+        grid-template-columns: 48px 1fr;
+        padding: 6rem $base 0 0;
+        gap: 8px;
     }
 
     &__overview {
@@ -25,6 +28,10 @@
             font-family: $pacifico;
             font-weight: 400;
             margin-bottom: 2rem;
+
+            @media (max-width: 480px) {
+                font-size: $md;
+            }
         }
 
         h3 {
@@ -91,10 +98,13 @@
     display: grid;
     grid-template-columns: 280px 1fr;
     gap: $big;
+    margin-bottom: $big;
+    position: relative;
 
-    @media(max-width: 650px) {
-        grid-template-columns: 1fr;
-        padding: 7rem $base 0 $base;
+    @media(max-width: 750px) {
+        grid-template-columns: 48px 1fr;
+        padding: 6rem $base 0 0;
+        gap: 8px;
     }
 
     &__orders {
@@ -110,6 +120,10 @@
             font-family: $pacifico;
             font-weight: 400;
             margin-bottom: $base;
+
+            @media (max-width: 480px) {
+                font-size: $md;
+            }
         }
 
         .orders {
@@ -164,10 +178,13 @@
     display: grid;
     grid-template-columns: 280px 1fr;
     gap: $big;
+    margin-bottom: $big;
+    position: relative;
 
-    @media(max-width: 650px) {
-        grid-template-columns: 1fr;
-        padding: 7rem $base 0 $base;
+    @media(max-width: 750px) {
+        grid-template-columns: 48px 1fr;
+        padding: 6rem $base 0 0;
+        gap: 8px;
     }
 
     &__items {
@@ -183,6 +200,10 @@
             font-family: $pacifico;
             font-weight: 400;
             margin-bottom: $big;
+
+            @media (max-width: 480px) {
+                font-size: $md;
+            }
         }
 
         >div {
@@ -201,10 +222,13 @@
     display: grid;
     grid-template-columns: 280px 1fr;
     gap: $big;
+    margin-bottom: $big;
+    position: relative;
 
-    @media(max-width: 650px) {
-        grid-template-columns: 1fr;
-        padding: 7rem $base 0 $base;
+    @media(max-width: 750px) {
+        grid-template-columns: 48px 1fr;
+        padding: 6rem $base 0 0;
+        gap: 8px;
     }
 
     &__edit {
@@ -220,6 +244,10 @@
             font-family: $pacifico;
             font-weight: 400;
             margin-bottom: $big;
+
+            @media (max-width: 480px) {
+                font-size: $md;
+            }
         }
 
         h3 {
