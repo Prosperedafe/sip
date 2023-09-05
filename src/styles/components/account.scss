@@ -36,22 +36,44 @@
 
     @media(max-width: 750px) {
         height: fit-content;
+        padding-bottom: 0;
+        width: 100%;
+        max-width: 400px;
+        border-radius: 5px;
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
         a {
-            margin-bottom: 20px;
+            padding: 10px;
+            justify-content: center;
+            flex-direction: column;
 
-            @media (max-width: 480px) {
-                padding: 10px;
-                justify-content: center;
+            @media (max-width: 450px) {
+                padding: 5px;
             }
 
             span {
-                display: none;
+                text-align: center;
+                font-size: 9px;
+
+                @media (max-width: 350px) {
+                    font-size: 7px;
+                }
             }
 
             svg {
                 margin-right: 0;
+                margin-bottom: 5px;
             }
+        }
+
+        #management {
+            margin-top: 0;
+            padding: 0;
         }
     }
 }
