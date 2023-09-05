@@ -1,9 +1,14 @@
 .blog__hero__section {
-    padding: 4rem $p-fluid;
-    min-height: 780px;
+    padding: 10rem $p-fluid $big $p-fluid;
+    min-height: 500px;
     display: flex;
     align-items: center;
     color: $light100;
+
+    @media(min-width: 800px) {
+        padding: 4rem $p-fluid;
+        min-height: 780px;
+    }
 
     >div {
         max-width: 660px;
@@ -19,6 +24,11 @@
             font-size: 1.2rem;
             font-family: $poppins;
             margin-top: 4rem;
+
+            @media(max-width: 600px) {
+                font-size: $base;
+                margin-top: $big;
+            }
         }
 
         button {
@@ -31,6 +41,10 @@
             padding: $tiny $big;
             display: block;
             margin-top: $big;
+
+            @media(max-width: 600px) {
+                font-size: $base;
+            }
         }
     }
 }
@@ -43,6 +57,10 @@
     color: $brown100;
     column-gap: 3rem;
     row-gap: $big;
+
+    @media(max-width: 800px) {
+        padding-top: $base;
+    }
 
     &__post {
         flex-grow: 1;
@@ -131,6 +149,12 @@
     margin: $big auto 0 auto;
     flex-wrap: wrap;
 
+    @media(max-width: 600px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: $base;
+    }
+
     button {
         display: block;
         flex-grow: 1;
@@ -140,6 +164,19 @@
         padding: .8rem $md;
         border: none;
         background: transparent;
+
+        @media(max-width: 800px) {
+            padding: .6rem 1.5rem;
+            font-size: $base;
+        }
+
+        @media(max-width: 600px) {
+
+            &:nth-child(2),
+            &:nth-child(3) {
+                display: none;
+            }
+        }
     }
 
     .active {
@@ -151,6 +188,10 @@
 #blog__post__recipes {
     padding: $big 0 0 0;
     color: $brown100;
+
+    @media(max-width: 800px) {
+        padding-top: $base;
+    }
 
     >section {
         padding: $big $p-fluid;
