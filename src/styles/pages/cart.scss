@@ -8,7 +8,8 @@
     right: 0;
     border-radius: 20px 0px 0px 0px;
     overflow-y: scroll;
-    max-height: 100vh;
+    min-height: 100vh;
+    max-height: 101vh;
     padding: $base $base calc($big * 2) $base;
     scrollbar-width: none;
     -ms-overflow-style: none;

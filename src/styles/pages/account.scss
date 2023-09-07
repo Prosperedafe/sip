@@ -21,6 +21,8 @@
 
         @media(max-width: 500px) {
             padding: $base;
+            border: none;
+            padding: $base 0;
         }
 
         h2 {
@@ -69,7 +71,7 @@
             .details,
             .address {
                 flex-grow: 1;
-                flex-basis: 200px;
+                flex-basis: 250px;
             }
 
             .details {
@@ -123,6 +125,12 @@
         color: $light100;
         font-family: $poppins;
         padding: $base;
+
+        @media(max-width: 500px) {
+            padding: $base;
+            border: none;
+            padding: $base 0;
+        }
 
         h2 {
             font-size: $big;
@@ -209,6 +217,12 @@
         font-family: $poppins;
         padding: $base;
 
+        @media(max-width: 500px) {
+            padding: $base;
+            border: none;
+            padding: $base 0;
+        }
+
         h2 {
             font-size: $big;
             font-family: $pacifico;
@@ -252,6 +266,12 @@
         color: $light100;
         font-family: $poppins;
         padding: $base;
+
+        @media(max-width: 500px) {
+            padding: $base;
+            border: none;
+            padding: $base 0;
+        }
 
         h2 {
             font-size: $big;
