@@ -4,11 +4,15 @@ import { Link } from "react-router-dom";
 import { LabelInput, PasswordInput, SubmitBtn } from "../../components/inputs";
 import { useFormik } from "formik";
 import { basicSchema } from "../../schema";
+import { useDispatch } from "react-redux";
+import { saveRegistrationDetails } from "../../store/slice/userSlice";
 
 const SignUp: FC = () => {
+    const dispatch = useDispatch()
 
     const onSubmit = (values: any) => {
         console.log(values);
+        dispatch(saveRegistrationDetails({ values }))
     }
     const { values, errors, touched, isSubmitting, handleBlur, handleChange, handleSubmit } = useFormik({
         initialValues: {
