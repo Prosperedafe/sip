@@ -1,4 +1,4 @@
-#signup {
+.auth {
     padding: 8rem $p-fluid 0 $p-fluid;
     justify-content: center;
     align-items: flex-end;
@@ -35,7 +35,7 @@
             text-align: center;
         }
 
-        p {
+        .link {
             font-size: $base;
             font-family: $poppins;
             text-align: center;
@@ -51,53 +51,18 @@
         form {
             margin-top: 3rem;
 
-            * {
-                font-family: $poppins;
-                font-size: calc($base + 2px);
-                max-width: 430px;
-                margin: 0 auto;
-            }
-
-            label {
-                display: block;
-                color: $light100;
-                margin-top: $big;
-
-                &[for=password] {
-                    margin-top: 2rem;
-                }
-            }
-
-            input {
-                border: 1px solid hsla(0, 0%, 24%, 1);
-                background: transparent;
-                display: block;
-                padding: .5rem $base;
-                border-radius: 20px;
-                width: 100%;
-                margin-top: .5rem;
-                color: $light100;
-
-                &::placeholder {
-                    color: hsla(0, 0%, 74%, 1);
-                    font-weight: 300;
-                }
-
-                &:focus {
-                    outline: 1px solid hsla(0, 0%, 24%, 1);
-                }
-            }
-
             button {
                 background: $light100;
                 border: 2px solid $light100;
                 border-radius: 20px;
-                padding: .6rem $big;
+                padding: .4rem $big;
                 width: 100%;
                 display: block;
                 margin: 2rem auto 0 auto;
                 color: $brown100;
                 font-weight: 500;
+                font-family: $poppins;
+                font-size: calc($base + 2px);
             }
         }
     }

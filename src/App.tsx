@@ -2,6 +2,7 @@ import './App.scss';
 import Blog from './pages/Blog/blog';
 import Login from './pages/auth/login';
 import SignUp from './pages/auth/signup';
+import Account from './pages/account/Account';
 import Contact from './pages/contact/contact';
 import HomePage from './pages/Homepage/HomePage';
 import SavedItems from './pages/account/saved';
@@ -26,13 +27,13 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
-          <Route path='/account/overview' element={<AccountOverview />} />
-          <Route path='/account/saved' element={<SignUp />} />
-          <Route path='/account/orders' element={<AccountOrders />} />
-          <Route path='/account/management' element={<SignUp />} />
-          <Route path='/account/saved-items' element={<SavedItems />} />
-          <Route path='/account/edit-profile/:id' element={<EditAccount />} />
-          <Route path='blog/recipe/:fruit' element={<FruitRecipe />} />
+          <Route path='/blog/recipe/:fruit' element={<FruitRecipe />} />
+          <Route element={<Account />}>
+            <Route path='/account/overview' element={<AccountOverview />} />
+            <Route path='/account/orders' element={<AccountOrders />} />
+            <Route path='/account/saved-items' element={<SavedItems />} />
+            <Route path='/account/edit-profile/:id' element={<EditAccount />} />
+          </Route>
         </Routes>
       </main>
       <Footer />

@@ -1,0 +1,91 @@
+.label__input,
+.input__password {
+    * {
+        font-family: $poppins;
+        font-size: calc($base + 2px);
+        max-width: 430px;
+        margin: 0 auto;
+    }
+
+    label {
+        display: block;
+        color: $light100;
+        margin-top: $big;
+
+        &[for=password] {
+            margin-top: 2rem;
+        }
+    }
+
+    input {
+        border: 1px solid hsla(0, 0%, 24%, 1);
+        background: transparent;
+        display: block;
+        padding: .5rem $base;
+        border-radius: 20px;
+        width: 100%;
+        margin-top: .5rem;
+        color: $light100;
+
+        &::placeholder {
+            color: hsla(0, 0%, 74%, 1);
+            font-weight: 300;
+        }
+
+        &:focus {
+            outline: 1px solid hsla(0, 0%, 24%, 1);
+        }
+    }
+
+    .input-error {
+        border: 1px solid hsl(0, 90%, 69%);
+    }
+
+    >div {
+        position: relative;
+        border: 1px solid hsla(0, 0%, 24%, 1);
+        border-radius: 20px;
+
+        &:focus {
+            border: 1px solid hsla(0, 0%, 24%, 1);
+        }
+
+        svg {
+            position: absolute;
+            right: 20px;
+            bottom: .5rem;
+            cursor: pointer;
+        }
+    }
+
+    .error {
+        color: hsl(0, 90%, 59%);
+        font-size: .8rem;
+        margin-top: 4px;
+    }
+}
+
+.input__password {
+    label {
+        margin-bottom: .5rem;
+    }
+
+    input {
+        padding-right: 40px;
+        border: none;
+        margin-top: 0;
+        width: 100%;
+
+        &:-webkit-autofill::-webkit-input-placeholder {
+            background: transparent !important;
+        }
+
+        &:-webkit-autofill:disabled {
+            background: transparent !important;
+        }
+
+        &:focus {
+            outline: 1px solid transparent;
+        }
+    }
+}
