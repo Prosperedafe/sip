@@ -8,7 +8,7 @@
 
     @media(max-width: 750px) {
         grid-template-columns: 1fr;
-        padding: 4.5rem $base 0 0;
+        padding: 4.5rem $base 0 $base;
         gap: 8px;
     }
 
@@ -112,7 +112,7 @@
 
     @media(max-width: 750px) {
         grid-template-columns: 1fr;
-        padding: 4.5rem $base 0 0;
+        padding: 4.5rem $base 0 $base;
         gap: 8px;
     }
 
@@ -197,7 +197,7 @@
 
     @media(max-width: 750px) {
         grid-template-columns: 1fr;
-        padding: 4.5rem $base 0 0;
+        padding: 4.5rem $base 0 $base;
         gap: 8px;
     }
 
@@ -241,7 +241,7 @@
 
     @media(max-width: 750px) {
         grid-template-columns: 1fr;
-        padding: 4.5rem $base 0 0;
+        padding: 4.5rem $base 0 $base;
         gap: 8px;
     }
 
