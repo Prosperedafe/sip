@@ -29,7 +29,7 @@
         flex-grow: 1;
 
         @media (max-width: 600px) {
-            padding: 2rem $base;
+            padding: 2rem 0;
             margin-bottom: $big;
             border: none;
         }
