@@ -14,6 +14,11 @@
         padding-top: 6rem;
     }
 
+    @media (max-width: 500px) {
+        margin-bottom: 0;
+        padding-top: 5rem;
+    }
+
     >section {
         flex-basis: 300px;
         flex-grow: 1;
@@ -24,8 +29,9 @@
         flex-grow: 1;
 
         @media (max-width: 600px) {
-            padding: 2rem $base 2rem $base;
+            padding: 2rem $base;
             margin-bottom: $big;
+            border: none;
         }
 
         h2 {
