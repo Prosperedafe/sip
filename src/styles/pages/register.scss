@@ -1,5 +1,5 @@
 .auth {
-    padding: 8rem $p-fluid 0 $p-fluid;
+    padding: 6rem $p-fluid 0 $p-fluid;
     justify-content: center;
     align-items: flex-end;
     gap: $big;
@@ -11,6 +11,7 @@
 
     @media (max-width: 850px) {
         margin-bottom: $big;
+        padding-top: 6rem;
     }
 
     >section {
@@ -33,6 +34,11 @@
             font-family: $pacifico;
             color: $light100;
             text-align: center;
+            line-height: 1;
+
+            @media (max-width: 480px) {
+                font-size: $big;
+            }
         }
 
         .link {
@@ -49,7 +55,7 @@
         }
 
         form {
-            margin-top: 3rem;
+            margin-top: $base;
 
             button {
                 background: $light100;
