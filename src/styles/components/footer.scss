@@ -1,6 +1,7 @@
 footer {
     background: $brown100;
     padding: calc($big * 2) $p-fluid;
+    overflow: hidden;
 
     .newsletter {
         display: flex;

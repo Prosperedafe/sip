@@ -1,14 +1,61 @@
 import { Link } from "react-router-dom"
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef, FC, useLayoutEffect } from "react";
+gsap.registerPlugin(ScrollTrigger)
 
-export const Footer = () => {
+export const Footer: FC = () => {
+    const linksRef = useRef<any>(HTMLUListElement);
+    const newsRef = useRef<any>(HTMLDivElement);
+    const socialRef = useRef<any>(HTMLDivElement);
+    const formRef = useRef<any>(HTMLFormElement);
+    const pRef = useRef<any>(HTMLParagraphElement);
+
+    useLayoutEffect(() => {
+
+        const newsElem = newsRef.current
+        gsap.fromTo(newsElem, { translate: "-170% 0%" }, {
+            translate: "0% 0%", duration: .7, scrollTrigger: {
+                trigger: newsElem
+            }
+        })
+
+        const formElem = formRef.current
+        gsap.fromTo(formElem, { translate: "0% -270%" }, {
+            translate: "0 0", duration: .9, scrollTrigger: {
+                trigger: formElem
+            }
+        })
+
+        const linkElem = linksRef.current
+        gsap.fromTo(linkElem, { translate: "0 230%" }, {
+            translate: "0% 0%", duration: 1.1, scrollTrigger: {
+                trigger: linkElem
+            }
+        })
+
+        const socialElem = socialRef.current
+        gsap.fromTo(socialElem, { translate: "300% 200%" }, {
+            translate: "0% 0%", duration: 1.3, scrollTrigger: {
+                trigger: socialElem
+            }
+        })
+        const pElem = pRef.current
+        gsap.fromTo(pElem, { translate: "0 170%", opacity: 0 }, {
+            translate: "0% 0%", opacity: 1, duration: 1.5, scrollTrigger: {
+                trigger: pElem
+            }
+        })
+    }, []);
+
     return (
         <footer>
             <div className="newsletter">
-                <div>
+                <div ref={newsRef}>
                     <h2>Get Update with Newest Blog</h2>
                     <p>The latest news and articles to your inbox.</p>
                 </div>
-                <form>
+                <form ref={formRef}>
                     <div className="input">
                         <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M2.5 16C1.95 16 1.47917 15.8042 1.0875 15.4125C0.695833 15.0208 0.5 14.55 0.5 14V2C0.5 1.45 0.695833 0.979167 1.0875 0.5875C1.47917 0.195833 1.95 0 2.5 0H18.5C19.05 0 19.5208 0.195833 19.9125 0.5875C20.3042 0.979167 20.5 1.45 20.5 2V14C20.5 14.55 20.3042 15.0208 19.9125 15.4125C19.5208 15.8042 19.05 16 18.5 16H2.5ZM10.5 9L2.5 4V14H18.5V4L10.5 9ZM10.5 7L18.5 2H2.5L10.5 7ZM2.5 4V2V14V4Z" fill="#B3B2B2" />
@@ -18,7 +65,7 @@ export const Footer = () => {
                     <button>Subscribe</button>
                 </form>
             </div>
-            <ul>
+            <ul ref={linksRef}>
                 <li>
                     <Link to="/">Company</Link>
                 </li>
@@ -32,7 +79,7 @@ export const Footer = () => {
                     <Link to="/">Blog</Link>
                 </li>
             </ul>
-            <div className="social">
+            <div ref={socialRef} className="social">
                 <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M20.4135 5.32189C20.6022 5.32347 20.7868 5.37661 20.9473 5.47557C21.1079 5.57452 21.2384 5.71552 21.3246 5.8833C21.4108 6.05108 21.4495 6.23925 21.4364 6.42743C21.4234 6.6156 21.3591 6.79663 21.2505 6.95089L20.2085 8.43189C20.1445 13.5179 18.4435 16.9709 15.1525 18.6959C13.5843 19.4753 11.8515 19.8659 10.1005 19.8349C7.9354 19.8847 5.79586 19.3588 3.90053 18.3109C3.77303 18.2252 3.67449 18.1029 3.6179 17.9601C3.56131 17.8173 3.54933 17.6607 3.58353 17.5109C3.61555 17.3589 3.6929 17.2202 3.80538 17.1131C3.91785 17.006 4.06016 16.9355 4.21353 16.9109C5.48678 16.7331 6.74058 16.4364 7.95853 16.0249C2.50053 13.4999 3.69053 7.82389 4.21053 6.08089C4.26122 5.90785 4.35654 5.75118 4.48692 5.62662C4.6173 5.50205 4.77814 5.41397 4.95332 5.37122C5.12849 5.32846 5.31183 5.33254 5.48494 5.38303C5.65804 5.43352 5.81482 5.52866 5.93953 5.65889C7.53717 7.30512 9.65546 8.34748 11.9345 8.60889C11.8941 7.99643 11.9888 7.38257 12.2119 6.81075C12.4349 6.23893 12.781 5.72314 13.2255 5.29989C13.9956 4.56906 15.0179 4.16329 16.0795 4.16702C17.1412 4.17074 18.1606 4.58367 18.9255 5.31989L20.4135 5.32189ZM5.02153 17.7939C6.88353 18.6659 11.2475 19.6129 14.6885 17.8099C17.6435 16.2609 19.1645 13.0779 19.2095 8.34889C19.2116 8.19252 19.2611 8.04046 19.3515 7.91289L20.4325 6.37489L20.3915 6.32189C19.8735 6.31489 19.3625 6.30789 18.8415 6.32189C18.6384 6.31724 18.4439 6.23866 18.2945 6.10089C17.7189 5.51738 16.9373 5.18296 16.1177 5.1695C15.2982 5.15604 14.506 5.4646 13.9115 6.02889C13.5297 6.39206 13.2443 6.84458 13.081 7.34563C12.9178 7.84668 12.8819 8.38049 12.9765 8.89889C12.9939 8.99547 12.9891 9.09474 12.9624 9.18917C12.9358 9.2836 12.8879 9.37071 12.8225 9.44389C12.7599 9.51771 12.6801 9.57502 12.5901 9.61076C12.5001 9.64651 12.4028 9.6596 12.3065 9.64889C9.61975 9.4614 7.09693 8.28795 5.22253 6.35389C4.55253 8.43189 3.70253 13.4479 9.09153 15.4189C9.20494 15.4596 9.30436 15.5318 9.37806 15.6272C9.45177 15.7225 9.49669 15.8369 9.50753 15.9569C9.51973 16.0751 9.49798 16.1943 9.44485 16.3006C9.39172 16.4068 9.30939 16.4957 9.20753 16.5569C7.89066 17.1991 6.47593 17.6171 5.02153 17.7939Z" fill="#B3B2B2" />
                 </svg>
@@ -59,7 +106,7 @@ export const Footer = () => {
                     <path d="M15.784 11.9975L10.5605 9.00195V14.993L15.784 11.9975Z" stroke="#B3B2B2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
             </div>
-            <p className="copyright">@SipSavor 2023</p>
+            <p ref={pRef} className="copyright">@SipSavor 2023</p>
         </footer>
     )
 }
