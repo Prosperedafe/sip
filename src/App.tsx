@@ -32,7 +32,7 @@ function App() {
             <Route path='/signup' element={<SignUp />} />
             <Route path='/blog/recipe/:fruit' element={<FruitRecipe />} />
             <Route element={<Account />}>
-              <Route path='/account/overview/:id' element={<AccountOverview />} />
+              <Route path='/account/overview/' element={<AccountOverview />} />
               <Route path='/account/orders' element={<AccountOrders />} />
               <Route path='/account/saved-items' element={<SavedItems />} />
               <Route path='/account/edit-profile/:id' element={<EditAccount />} />
