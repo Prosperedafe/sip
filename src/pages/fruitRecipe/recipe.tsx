@@ -2,25 +2,69 @@ import { BlogCard } from "../../components/blog/chunks";
 import { posts } from "../../components/blog/posts";
 import { recipes } from "../../components/blog/recipes";
 import { BaseColumn, ReverseColumn } from "./Layout";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef, FC, useEffect, useLayoutEffect } from "react";
+gsap.registerPlugin(ScrollTrigger)
 
-const FruitRecipe = () => {
+const FruitRecipe: FC = () => {
+    useEffect(() => {
+        // window.startFrom(0, 0)
+    })
 
     const getIdFromStorage = JSON.parse(localStorage.getItem("fruit__un-iD") as string);
     const fruitId = parseFloat(getIdFromStorage);
     const fruitDrink = recipes.find(drinkId => drinkId.id === fruitId);
+    const bottleRef = useRef<any>(HTMLImageElement);
+    const textRef = useRef<any>(HTMLDivElement);
+    const chunkRef = useRef<any>(HTMLImageElement);
+    const containerRef = useRef<any>(HTMLDivElement);
+
+    useLayoutEffect(() => {
+        const bottleElem = bottleRef.current
+        gsap.fromTo(bottleElem, { translate: "0 70%" }, {
+            translate: "0 0", duration: .4, scrollTrigger: {
+                trigger: bottleElem
+            }
+        })
+        const textElem = textRef.current
+        gsap.fromTo(textElem, { translate: "0 70%" }, {
+            translate: "0 0", duration: .4, scrollTrigger: {
+                trigger: textElem
+            }
+        })
+        const chunkElem = chunkRef.current
+        gsap.fromTo(chunkElem, { translate: "0 70%", scale: .4 }, {
+            translate: "0 0", scale: 1, duration: .4, scrollTrigger: {
+                trigger: chunkElem
+            }
+        })
+        const containerElem = containerRef.current
+        gsap.fromTo(containerElem, { paddingTop: "20rem", }, {
+            paddingTop: "0", duration: .6, scrollTrigger: {
+                trigger: containerElem
+            }
+        })
+    }, []);
 
     return (
         <>
             <article style={{ background: fruitDrink?.background }} className="fruit__recipe">
-                <section className="fruit__recipe__name">
-                    <div>
-                        <h2>{fruitDrink?.title}</h2>
-                        <p>{fruitDrink?.paragraph}</p>
+                <section ref={containerRef} className="fruit__recipe__name">
+                    <div className="container">
+                        <div className="hide">
+                            <h2>{fruitDrink?.title}</h2>
+                            <p>{fruitDrink?.paragraph}</p>
+                        </div>
+                        <div className="show" ref={textRef}>
+                            <h2>{fruitDrink?.title}</h2>
+                            <p>{fruitDrink?.paragraph}</p>
+                        </div>
                     </div>
                     <picture>
-                        <img src={fruitDrink?.fruit} alt={fruitDrink?.title} />
+                        <img src={fruitDrink?.fruit} alt={fruitDrink?.title} ref={chunkRef} />
                         <figure>
-                            <img src={fruitDrink?.bottle} alt={fruitDrink?.title} />
+                            <img src={fruitDrink?.bottle} alt={fruitDrink?.title} ref={bottleRef} />
                         </figure>
                     </picture>
                 </section>

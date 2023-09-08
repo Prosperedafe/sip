@@ -1,5 +1,6 @@
 .fruit__recipe {
     padding: 6rem $p-fluid;
+    scroll-padding-top: 10rem;
 
     * {
         color: $brown100;
@@ -44,9 +45,11 @@
         justify-content: space-between;
         gap: $big;
 
-        >div {
+        .container {
             flex-grow: 1;
             flex-basis: 300px;
+            position: relative;
+            overflow: hidden;
 
             p {
                 max-width: 460px;
@@ -54,6 +57,15 @@
                 @media (max-width: 750px) {
                     max-width: 100%;
                 }
+            }
+
+            .hide {
+                opacity: 0;
+            }
+
+            .show {
+                position: absolute;
+                top: 0;
             }
         }
 

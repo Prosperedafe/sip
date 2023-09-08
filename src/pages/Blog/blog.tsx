@@ -1,10 +1,10 @@
 import { posts } from "../../components/blog/posts";
 import { recipes } from "../../components/blog/recipes";
-import { useEffect, useState, useRef, FC, useLayoutEffect } from "react";
+import { useEffect, useState, FC } from "react";
 import { useNavigate } from "react-router-dom";
 import { BlogCard, BlogHero, Recipes } from "../../components/blog/chunks";
 
-const Blog = () => {
+const Blog: FC = () => {
 
     const navigate = useNavigate()
     const [activePost, setActiveBlog] = useState<string>("all")
