@@ -1,18 +1,17 @@
 import signup from "../../assets/images/signup.png";
 import { FC } from "react";
 import { Link } from "react-router-dom";
-import { LabelInput, PasswordInput, SubmitBtn } from "../../components/inputs";
+import { setUser } from "../../store/slice/userSlice";
 import { useFormik } from "formik";
 import { basicSchema } from "../../schema";
 import { useDispatch } from "react-redux";
-import { setUser } from "../../store/slice/userSlice";
+import { LabelInput, PasswordInput, SubmitBtn } from "../../components/inputs";
 
 const SignUp: FC = () => {
-    // const user = useSelector((state: any) => state.user)
     const dispatch = useDispatch()
 
     const onSubmit = (values: any) => {
-        // console.log(values);
+        console.log(values);
         dispatch(setUser(values))
         localStorage.setItem("sip-auth", JSON.stringify(values))
         // if (localStorage.getItem("sip-auth") !== null || undefined) {

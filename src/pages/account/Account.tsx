@@ -1,18 +1,19 @@
 import { useEffect } from "react";
+import { useSelector } from "react-redux";
 import { Outlet, useNavigate } from "react-router-dom";
 
 export default function Account() {
-    const authId = JSON.parse(localStorage.getItem("sip-auth")!)
+    const authUser = useSelector((state: any) => state.user.user)
     const navigate = useNavigate()
     useEffect(() => {
-        if (authId === null || undefined) {
+        if (authUser === null || undefined) {
             navigate("/login")
         }
     })
 
     return (
         <>
-            {authId !== null || undefined ? <Outlet /> : null}
+            {authUser !== null || undefined ? <Outlet /> : null}
         </>
     )
 }
