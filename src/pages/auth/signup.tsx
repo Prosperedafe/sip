@@ -1,6 +1,6 @@
 import signup from "../../assets/images/signup.png";
 import { FC } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { LabelInput, PasswordInput, SubmitBtn } from "../../components/inputs";
 import { useFormik } from "formik";
 import { basicSchema } from "../../schema";
@@ -10,7 +10,6 @@ import { setUser } from "../../store/slice/userSlice";
 const SignUp: FC = () => {
     // const user = useSelector((state: any) => state.user)
     const dispatch = useDispatch()
-    const navigate = useNavigate()
 
     const onSubmit = (values: any) => {
         // console.log(values);
