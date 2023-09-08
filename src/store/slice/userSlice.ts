@@ -1,16 +1,24 @@
+// formSlice.js
 import { createSlice } from '@reduxjs/toolkit';
+
+const initialState = {
+  user: null
+};
+// console.log(initialState.user);
 
 const userSlice = createSlice({
   name: 'user',
-  initialState: {
-    registrationDetails: null,
-  },
+  initialState,
   reducers: {
-    saveRegistrationDetails: (state, action) => {
-      state.registrationDetails = action.payload;
+     setUser: (state, action) => {
+      state.user = action.payload;
+    },
+    clearUser: (state) => {
+      state.user = null;
     },
   },
 });
 
-export const { saveRegistrationDetails } = userSlice.actions;
+export const { setUser, clearUser} = userSlice.actions;
 export default userSlice.reducer;
+

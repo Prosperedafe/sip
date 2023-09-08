@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { AccountNav } from "../../components/AccountNav";
 
 const AccountOverview = () => {
+    const userDetails = JSON.parse(localStorage.getItem("sip-auth")!)
+
     return (
         <section id="account__overview">
             <AccountNav />
@@ -11,11 +13,11 @@ const AccountOverview = () => {
                     <section className="details">
                         <h3>Account Details</h3>
                         <h4>First Name</h4>
-                        <p>Collins</p>
+                        <p>{userDetails.firstName}</p>
                         <h4>Last Name</h4>
-                        <p>Xara</p>
+                        <p>{userDetails.lastName}</p>
                         <h4>Email Address</h4>
-                        <p>name@gmail.com</p>
+                        <p>{userDetails.email}</p>
                         <h4>Phone Number</h4>
                         <p>+123 456 7890</p>
                         <div>

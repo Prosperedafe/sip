@@ -18,6 +18,7 @@ export const Navbar = () => {
     const redirect = () => {
         setShowCart(!showCart)
     }
+    const authId = JSON.parse(localStorage.getItem("sip-auth")!)
     return (
         <header className="main__header">
             <nav className="main__header__nav flex space-between items-center">
@@ -30,13 +31,17 @@ export const Navbar = () => {
                     </svg>
                     <NavLink onClick={changeNavState} className={({ isActive }) => (isActive ? "active" : "")} to="/">Home</NavLink>
                     <NavLink onClick={changeNavState} to="/blog">Blog</NavLink>
-                    <a onClick={setCartMode} className="cart items-center">
-                        <CartIcon />
-                        <span>Cart</span>
-                    </a>
+                    {authId !== null || undefined ?
+                        <a onClick={setCartMode} className="cart items-center">
+                            <CartIcon />
+                            <span>Cart</span>
+                        </a>
+                        : null}
                     <NavLink onClick={changeNavState} to="/contact">Contact</NavLink>
                     <NavLink onClick={changeNavState} to="/signup">Sign Up</NavLink>
-                    <NavLink onClick={changeNavState} to="/account/overview">Account</NavLink>
+                    {authId !== null || undefined ?
+                        <NavLink onClick={changeNavState} to="/account/overview">Account</NavLink>
+                        : null}
                 </div>
                 <div style={{ opacity: showNav ? "0" : "1" }} className="mobile__nav__toggler" onClick={changeNavState}>
                     <span></span>
