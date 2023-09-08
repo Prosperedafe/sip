@@ -55,7 +55,7 @@
 
             summary {
                 cursor: pointer;
-                font-size: calc($base + 4px);
+                font-size: calc($base + 1px);
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
@@ -74,6 +74,7 @@
 
             >p {
                 margin-top: $base;
+                font-size: $sm;
             }
         }
     }

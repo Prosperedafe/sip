@@ -1,7 +1,11 @@
 footer {
     background: $brown100;
-    padding: calc($big * 2) $p-fluid;
+    padding: calc($big * 1.5) $p-fluid;
     overflow: hidden;
+
+    @media (max-width:700px) {
+        padding: $big $p-fluid;
+    }
 
     .newsletter {
         display: flex;
@@ -19,6 +23,11 @@ footer {
             font-family: $pacifico;
             font-weight: 400;
             margin-bottom: $base;
+
+            @media (max-width:1000px) {
+                text-align: center;
+                font-size: $md;
+            }
         }
 
         p {
@@ -26,6 +35,11 @@ footer {
             font-family: $poppins;
             font-size: calc($base + 2px);
             font-weight: 300;
+
+            @media (max-width:1000px) {
+                text-align: center;
+                font-size: $base;
+            }
         }
 
         form {
@@ -46,11 +60,11 @@ footer {
                 }
 
                 input {
-                    padding: 12px 24px 12px 54px;
+                    padding: 10px 24px 10px 54px;
                     border-radius: 20px;
                     border: 1px solid hsla(26, 0%, 70%, 1);
                     background: transparent;
-                    font-size: calc($base + 2px);
+                    font-size: $base;
                     font-family: $poppins;
                     color: $light100;
                     width: 100%;
@@ -72,7 +86,7 @@ footer {
                 border: none;
                 padding: 10px 24px 10px 24px;
                 font-family: $poppins;
-                font-size: calc($base + 4px);
+                font-size: $base;
                 font-weight: 500;
             }
         }
