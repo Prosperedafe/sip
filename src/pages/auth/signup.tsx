@@ -13,15 +13,15 @@ const SignUp: FC = () => {
     const navigate = useNavigate()
 
     const onSubmit = (values: any) => {
-        console.log(values);
+        // console.log(values);
         dispatch(setUser(values))
         localStorage.setItem("sip-auth", JSON.stringify(values))
-        if (localStorage.getItem("sip-auth") !== null || undefined) {
-            navigate("/account/overview")
-            setTimeout(() => {
-                window.location.reload()
-            }, 2000)
-        }
+        // if (localStorage.getItem("sip-auth") !== null || undefined) {
+        //     navigate("/account/overview")
+        //     setTimeout(() => {
+        //         window.location.reload()
+        //     }, 2000)
+        // }
     }
 
     const { values, errors, touched, isSubmitting, handleBlur, handleChange, handleSubmit } = useFormik({

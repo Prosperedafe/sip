@@ -188,10 +188,12 @@
 #blog__post__recipes {
     padding: $big 0 0 0;
     color: $brown100;
+    position: relative;
 
     @media(max-width: 800px) {
         padding-top: $base;
     }
+
 
     >section {
         padding: $big $p-fluid;
@@ -199,23 +201,28 @@
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
+        overflow: hidden;
 
         &:nth-child(even) {
             flex-direction: row-reverse;
 
             >div {
+                position: relative;
                 display: flex;
                 justify-content: flex-end;
 
                 >div {
                     max-width: fit-content;
                 }
+
             }
+
         }
 
         div {
             flex-grow: 1;
             flex-basis: 300px;
+            position: relative;
 
             p {
                 max-width: 460px;
@@ -223,6 +230,15 @@
                 @media (max-width: 750px) {
                     max-width: 100%;
                 }
+            }
+
+            .hidden__layer {
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            .visible__layer {
+                position: absolute;
             }
         }
 

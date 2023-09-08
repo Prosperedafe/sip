@@ -1,10 +1,8 @@
-import { FC } from "react";
-
-interface contentprops {
-    heading: string,
-    paragraph: string,
-    button?: string
-}
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef, FC, useLayoutEffect } from "react";
+import { recipes, contentprops, postProps } from "../../schema/interface";
+gsap.registerPlugin(ScrollTrigger)
 
 export const BlogHero: FC<contentprops> = ({ heading, paragraph, button }) => {
     return (
@@ -18,17 +16,8 @@ export const BlogHero: FC<contentprops> = ({ heading, paragraph, button }) => {
     )
 }
 
-interface postProps {
-    title: string,
-    paragraph: string,
-    image: string,
-    userImg: string,
-    userName: string,
-    time: string,
-    backgroundColor: string,
-}
-
 export const BlogCard: FC<postProps> = ({ title, paragraph, image, userImg, userName, time, backgroundColor }) => {
+
     return (
         <article style={{ background: backgroundColor }}>
             <figure>
@@ -49,29 +38,51 @@ export const BlogCard: FC<postProps> = ({ title, paragraph, image, userImg, user
         </article>
     )
 }
-interface recipes {
-    bottle: string,
-    fruit: string,
-    title: string,
-    paragraph: string,
-    onClick: any;
-}
 
 export const Recipes: FC<recipes> = ({ bottle, fruit, title, paragraph, onClick }) => {
+    const bottleRef = useRef<any>(HTMLImageElement);
+    const textRef = useRef<any>(HTMLDivElement);
+    const chunkRef = useRef<any>(HTMLImageElement);
+
+    useLayoutEffect(() => {
+        const bottleElem = bottleRef.current
+        gsap.fromTo(bottleElem, { translate: "0 70%" }, {
+            translate: "0 0", duration: .4, scrollTrigger: {
+                trigger: bottleElem
+            }
+        })
+        const textElem = textRef.current
+        gsap.fromTo(textElem, { translate: "0 70%" }, {
+            translate: "0 0", duration: .4, scrollTrigger: {
+                trigger: textElem
+            }
+        })
+        const chunkElem = chunkRef.current
+        gsap.fromTo(chunkElem, { translate: "0 70%", scale: .4 }, {
+            translate: "0 0", scale: 1, duration: .4, scrollTrigger: {
+                trigger: chunkElem
+            }
+        })
+    }, []);
 
     return (
         <>
             <div>
-                <div>
+                <div className="visible__layer" ref={textRef}>
+                    <h3>{title}</h3>
+                    <p>{paragraph}</p>
+                    <button onClick={onClick}>Read More</button>
+                </div>
+                <div className="hidden__layer">
                     <h3>{title}</h3>
                     <p>{paragraph}</p>
                     <button onClick={onClick}>Read More</button>
                 </div>
             </div>
             <picture>
-                <img src={fruit} alt={title} />
+                <img src={fruit} alt={title} ref={chunkRef} />
                 <figure>
-                    <img src={bottle} alt={title} />
+                    <img src={bottle} alt={title} ref={bottleRef} />
                 </figure>
             </picture>
         </>
