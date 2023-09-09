@@ -40,8 +40,9 @@
                 }
             }
 
-            .cart {
-                gap: $tiny;
+            .cart,
+            .logout {
+                gap: 4px;
                 display: flex;
                 position: relative;
                 cursor: pointer;
@@ -50,7 +51,7 @@
             .active {
                 color: $light100;
 
-                * {
+                rect {
                     fill: $light100;
                 }
             }

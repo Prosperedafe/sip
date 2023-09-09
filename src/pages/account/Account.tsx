@@ -3,17 +3,17 @@ import { useSelector } from "react-redux";
 import { Outlet, useNavigate } from "react-router-dom";
 
 export default function Account() {
-    const authUser = useSelector((state: any) => state.user.user)
+    const isAuthenticated = useSelector((state: any) => state.user.isAuthenticated);
     const navigate = useNavigate()
     useEffect(() => {
-        if (authUser === null || undefined) {
+        if (isAuthenticated === false) {
             navigate("/login")
         }
-    })
+    }, [])
 
     return (
         <>
-            {authUser !== null || undefined ? <Outlet /> : null}
+            {isAuthenticated === true ? <Outlet /> : null}
         </>
     )
 }

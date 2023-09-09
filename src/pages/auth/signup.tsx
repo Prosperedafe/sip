@@ -1,25 +1,28 @@
 import signup from "../../assets/images/signup.png";
-import { FC } from "react";
-import { Link } from "react-router-dom";
+import { FC, useEffect } from "react";
 import { setUser } from "../../store/slice/userSlice";
 import { useFormik } from "formik";
 import { basicSchema } from "../../schema";
-import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import { LabelInput, PasswordInput, SubmitBtn } from "../../components/inputs";
 
 const SignUp: FC = () => {
+    const isAuthenticated = useSelector((state: any) => state.user.isAuthenticated);
     const dispatch = useDispatch()
+    const navigateToHome = useNavigate()
+
+    useEffect(() => {
+        if (isAuthenticated === true) {
+            navigateToHome("/account/overview")
+        }
+    })
 
     const onSubmit = (values: any) => {
-        console.log(values);
         dispatch(setUser(values))
-        localStorage.setItem("sip-auth", JSON.stringify(values))
-        // if (localStorage.getItem("sip-auth") !== null || undefined) {
-        //     navigate("/account/overview")
-        //     setTimeout(() => {
-        //         window.location.reload()
-        //     }, 2000)
-        // }
+        setTimeout(() => {
+            navigateToHome("/account/overview")
+        }, 2000)
     }
 
     const { values, errors, touched, isSubmitting, handleBlur, handleChange, handleSubmit } = useFormik({
