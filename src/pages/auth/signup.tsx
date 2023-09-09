@@ -1,22 +1,15 @@
 import signup from "../../assets/images/signup.png";
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import { setUser } from "../../store/slice/userSlice";
 import { useFormik } from "formik";
 import { basicSchema } from "../../schema";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { LabelInput, PasswordInput, SubmitBtn } from "../../components/inputs";
 
 const SignUp: FC = () => {
-    const isAuthenticated = useSelector((state: any) => state.user.isAuthenticated);
     const dispatch = useDispatch()
     const navigateToHome = useNavigate()
-
-    useEffect(() => {
-        if (isAuthenticated === true) {
-            navigateToHome("/account/overview")
-        }
-    })
 
     const onSubmit = (values: any) => {
         dispatch(setUser(values))
