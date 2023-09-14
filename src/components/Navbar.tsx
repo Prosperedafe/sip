@@ -3,6 +3,9 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { CartIcon, MainLogo } from "./icons/MainLogo";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { logout } from "../store/slice/userSlice";
 
 export const Navbar = () => {
     const isAuthenticated = useSelector((state: any) => state.user.isAuthenticated);
@@ -19,6 +22,17 @@ export const Navbar = () => {
     const redirect = () => {
         setShowCart(!showCart)
     }
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+
+    const logOut = () => {
+        changeNavState
+        dispatch(logout())
+        navigate("/login")
+        setTimeout(() => {
+            window.location.reload()
+        }, 1000)
+    };
 
     return (
         <header className="main__header">
@@ -46,6 +60,17 @@ export const Navbar = () => {
                     }
                     {isAuthenticated === true ?
                         <NavLink onClick={changeNavState} to="/account/overview">Account</NavLink>
+                        : null
+                    }
+                    {isAuthenticated === true ?
+                        <a onClick={logOut} style={{ display: "flex", alignItems: "center", cursor: "pointer" }}>
+                            <span>Logout</span>
+                            <svg style={{ marginLeft: "8px" }} width="28" height="28" fill="none" stroke="#B3B2B2" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 8.25V6.375A1.875 1.875 0 0 1 10.875 4.5h7.5a1.875 1.875 0 0 1 1.875 1.875v11.25a1.875 1.875 0 0 1-1.875 1.875H11.25c-1.036 0-2.25-.84-2.25-1.875V15.75"></path>
+                                <path d="M13.5 15.75 17.25 12 13.5 8.25"></path>
+                                <path d="M3.75 12H16.5"></path>
+                            </svg>
+                        </a>
                         : null
                     }
                 </div>

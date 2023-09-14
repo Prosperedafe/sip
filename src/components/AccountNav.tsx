@@ -1,21 +1,8 @@
-import { logout } from "../store/slice/userSlice";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux/es/hooks/useSelector";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
 
 export const AccountNav = () => {
     const user = useSelector((state: any) => state.user?.user)
-    const dispatch = useDispatch()
-    const navigate = useNavigate()
-
-    const logOut = () => {
-        dispatch(logout())
-        navigate("/login")
-        setTimeout(() => {
-            window.location.reload()
-        }, 1000)
-    };
 
     return (
         <aside className="account__sidebar">
@@ -44,16 +31,8 @@ export const AccountNav = () => {
                         <span>Account Management</span>
                         <span>Manage</span>
                     </NavLink>
-                    <a onClick={logOut} style={{ cursor: "pointer" }}>
-                        <svg width="23" height="23" fill="none" stroke="#B3B2B2" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9 8.25V6.375A1.875 1.875 0 0 1 10.875 4.5h7.5a1.875 1.875 0 0 1 1.875 1.875v11.25a1.875 1.875 0 0 1-1.875 1.875H11.25c-1.036 0-2.25-.84-2.25-1.875V15.75"></path>
-                            <path d="M13.5 15.75 17.25 12 13.5 8.25"></path>
-                            <path d="M3.75 12H16.5"></path>
-                        </svg>
-                        <span>Logout</span>
-                    </a>
                 </div>
             </nav>
-        </aside >
+        </aside>
     )
 }
