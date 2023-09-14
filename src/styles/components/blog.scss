@@ -260,6 +260,10 @@
             font-size: 3rem;
             font-family: $pacifico;
             margin-bottom: $base;
+
+            @media(max-width: 750px) {
+                font-size: $big;
+            }
         }
 
         button,
