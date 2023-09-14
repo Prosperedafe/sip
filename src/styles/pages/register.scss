@@ -47,6 +47,15 @@
             }
         }
 
+        h3 {
+            font-weight: 300;
+            font-size: 1.3rem;
+            font-family: $poppins;
+            color: $light100;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
         .link {
             font-size: $base;
             font-family: $poppins;

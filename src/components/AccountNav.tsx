@@ -1,7 +1,21 @@
+import { logout } from "../store/slice/userSlice";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux/es/hooks/useSelector";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 export const AccountNav = () => {
-    const userDetails = JSON.parse(localStorage.getItem("sip-auth")!)
+    const user = useSelector((state: any) => state.user?.user)
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+
+    const logOut = () => {
+        dispatch(logout())
+        navigate("/login")
+        setTimeout(() => {
+            window.location.reload()
+        }, 1000)
+    };
 
     return (
         <aside className="account__sidebar">
@@ -23,13 +37,21 @@ export const AccountNav = () => {
                     <span>Saved Items</span>
                 </NavLink>
                 <div id="management">
-                    <NavLink to={`/account/edit-profile/${userDetails.firstName.toLowerCase()}${userDetails.lastName.toLowerCase()}`}>
+                    <NavLink to={`/account/edit-profile/${user.firstName.toLowerCase()}${user.lastName.toLowerCase()}`}>
                         <svg width="22" height="21" fill="#B3B2B2" viewBox="0 0 20 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12 8.25A3.75 3.75 0 1 0 15.75 12 3.761 3.761 0 0 0 12 8.25ZM20.094 12c-.002.35-.027.7-.076 1.047l2.282 1.787a.543.543 0 0 1 .123.693l-2.159 3.727a.546.546 0 0 1-.663.231l-2.683-1.078a8.27 8.27 0 0 1-1.82 1.063l-.401 2.85a.56.56 0 0 1-.54.461H9.84a.562.562 0 0 1-.54-.447l-.4-2.849a7.94 7.94 0 0 1-1.82-1.063L4.396 19.5a.545.545 0 0 1-.663-.23l-2.159-3.728a.543.543 0 0 1 .123-.692l2.283-1.787A8.182 8.182 0 0 1 3.903 12c.002-.35.027-.7.077-1.047L1.697 9.166a.543.543 0 0 1-.123-.693l2.16-3.727a.546.546 0 0 1 .662-.231L7.08 5.593A8.276 8.276 0 0 1 8.9 4.53l.4-2.85a.56.56 0 0 1 .54-.461h4.318a.563.563 0 0 1 .54.446l.4 2.85c.653.271 1.266.63 1.823 1.063L19.602 4.5a.546.546 0 0 1 .663.23l2.16 3.728a.543.543 0 0 1-.124.693l-2.282 1.787c.048.352.074.707.076 1.062Z"></path>
                         </svg>
                         <span>Account Management</span>
                         <span>Manage</span>
                     </NavLink>
+                    <a onClick={logOut} style={{ cursor: "pointer" }}>
+                        <svg width="23" height="23" fill="none" stroke="#B3B2B2" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 8.25V6.375A1.875 1.875 0 0 1 10.875 4.5h7.5a1.875 1.875 0 0 1 1.875 1.875v11.25a1.875 1.875 0 0 1-1.875 1.875H11.25c-1.036 0-2.25-.84-2.25-1.875V15.75"></path>
+                            <path d="M13.5 15.75 17.25 12 13.5 8.25"></path>
+                            <path d="M3.75 12H16.5"></path>
+                        </svg>
+                        <span>Logout</span>
+                    </a>
                 </div>
             </nav>
         </aside >

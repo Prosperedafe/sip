@@ -1,14 +1,27 @@
-import { FC } from "react";
-import login from "../../assets/images/login.png";
-import { Link } from "react-router-dom";
+import { FC, useEffect } from "react";
+import loginIcon from "../../assets/images/login.png";
+import { Link, useNavigate } from "react-router-dom";
 import { LabelInput, PasswordInput, SubmitBtn } from "../../components/inputs";
 import { useFormik } from "formik";
 import { loginSchema } from "../../schema";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { login } from "../../store/slice/userSlice";
 
 const Login: FC = () => {
-    const onSubmit = (values: any) => {
-        console.log(values);
+
+    const user = useSelector((state: any) => state.user?.user)
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+
+    const onSubmit = () => {
+        dispatch(login())
+        setTimeout(() => {
+            navigate("/account/overview")
+            window.location.reload()
+        })
     }
+
     const { values, errors, touched, isSubmitting, handleBlur, handleChange, handleSubmit } = useFormik({
         initialValues: {
             email: "",
@@ -17,12 +30,22 @@ const Login: FC = () => {
         validationSchema: loginSchema,
         onSubmit
     });
+
+    const isAuthenticated = useSelector((state: any) => state.user.isAuthenticated);
+
+    useEffect(() => {
+        if (isAuthenticated === true) {
+            navigate("/account/overview")
+        }
+    }, [])
+
     return (
         <section className="auth flex">
             <figure>
-                <img src={login} alt="login" />
+                <img src={loginIcon} alt="login" />
             </figure>
             <section className="auth__form">
+                {user.firstName ? <h3>Welcome back {user.firstName}</h3> : <></>}
                 <h2>Login</h2>
                 <form onSubmit={handleSubmit}>
                     <LabelInput value={values.email} error={errors.email} touch={touched.email} blur={handleBlur} change={handleChange} name="email" id="email" type="email" className="" label="Email Address" placeholder="name@gmail.com" />
