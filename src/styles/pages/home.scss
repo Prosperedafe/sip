@@ -1,10 +1,13 @@
+$scroll-bar-color: hsl(0, 0%, 77%, .5);
+$scroll-bar-bg-color: hsla(0, 0%, 13%, 1);
+
 #home__page {
 
     .heading {
         display: flex;
         justify-content: space-between !important;
         align-items: center;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
         gap: 10px !important;
 
         button {
@@ -32,7 +35,7 @@
     .most__searched,
     .recently__viewed,
     .reviews {
-        padding: $big $p-fluid;
+        padding: 0 $p-fluid $big $p-fluid;
 
         h2 {
             font-size: calc($big + .5rem);
@@ -42,7 +45,7 @@
             margin-bottom: $base;
             line-height: 1.2;
 
-            @media (max-width: 500px) {
+            @media (max-width: 850px) {
                 font-size: 1.8rem;
             }
 
@@ -53,13 +56,41 @@
     }
 
     .categories {
-        margin-top: -50px;
+        // margin-top: -50px;
 
         >div {
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
             gap: $md;
+
+            &:nth-child(2) {
+                overflow-x: scroll;
+                justify-content: space-between;
+                padding-bottom: $base;
+
+                &::-webkit-scrollbar {
+                    width: 5px;
+                    height: 10px;
+
+                    @media (max-width: 480px) {
+                        display: none;
+                    }
+                }
+
+                &::-webkit-scrollbar-track {
+                    background: $scroll-bar-bg-color;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background-color: $scroll-bar-color;
+                    border-radius: 20px;
+                    border: 3px solid $scroll-bar-bg-color;
+                }
+            }
+
+            @media (max-width: 850px) {
+                gap: 10px;
+            }
 
             figure {
                 background: $light100;
@@ -70,16 +101,34 @@
                 text-align: center;
                 max-width: 350px;
                 margin: 0 auto;
+                // min-width: 200px;
+
+                @media (max-width: 1100px) {
+                    min-width: 300px;
+                }
+
+                @media (max-width: 850px) {
+                    padding: 4px;
+                    min-width: 210px;
+                }
 
                 img {
                     display: inline-block;
                     margin: 0 auto;
+
+                    @media (max-width: 850px) {
+                        height: 110px;
+                    }
                 }
 
                 figcaption {
                     font-size: $base;
                     font-family: $pacifico;
                     color: $brown100;
+
+                    @media (max-width: 850px) {
+                        font-size: $sm;
+                    }
                 }
             }
         }
@@ -153,7 +202,7 @@
         flex-wrap: wrap;
         gap: 3rem;
         color: $light100;
-        padding: 4rem $p-fluid;
+        padding: 4rem $p-fluid $big $p-fluid;
 
         section {
             flex-grow: 1;
@@ -193,7 +242,7 @@
     }
 
     .reviews {
-        padding: 3rem $p-fluid;
+        padding: $base $p-fluid;
 
         >p {
             color: $light100;
@@ -207,9 +256,33 @@
         &__box {
             display: flex;
             justify-content: space-between;
-            flex-wrap: wrap;
             margin-top: $big;
             gap: $base;
+            overflow-x: scroll;
+            padding-bottom: $base;
+
+            @media (max-width: 850px) {
+                gap: 10px;
+            }
+
+            &::-webkit-scrollbar {
+                width: 5px;
+                height: 10px;
+
+                @media (max-width: 480px) {
+                    display: none;
+                }
+            }
+
+            &::-webkit-scrollbar-track {
+                background: $scroll-bar-bg-color;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: $scroll-bar-color;
+                border-radius: 20px;
+                border: 3px solid $scroll-bar-bg-color;
+            }
 
             >div {
                 background: $light100;
@@ -219,13 +292,22 @@
                 flex-basis: 200px;
                 flex-grow: 1;
 
+                @media (max-width: 1000px) {
+                    padding: 10px;
+                    min-width: 210px;
+                }
+
                 @media (max-width: 600px) {
-                    margin: 0 auto;
+                    min-width: 190px;
                 }
 
                 >P {
                     color: $brown100;
                     margin: $thin 0;
+
+                    @media (max-width: 600px) {
+                        font-size: $sm;
+                    }
                 }
 
                 .user__post {
@@ -233,6 +315,11 @@
 
                     img {
                         margin-right: $base;
+                        object-fit: contain;
+
+                        @media (max-width: 600px) {
+                            margin-right: 5px;
+                        }
                     }
 
                     h4 {
@@ -241,6 +328,10 @@
                         color: $brown100;
                         font-weight: 400;
                         margin-bottom: 5px;
+
+                        @media (max-width: 600px) {
+                            font-size: $sm;
+                        }
                     }
 
                     p {

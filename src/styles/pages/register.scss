@@ -20,13 +20,12 @@
     }
 
     >section {
-        flex-basis: 300px;
-        flex-grow: 1;
         border: 1px solid hsla(0, 0%, 24%, 1);
         border-radius: 20px;
-        padding: 3rem $base;
+        padding: 2.5rem $base;
         flex-basis: 350px;
         flex-grow: 1;
+        margin-bottom: $big;
 
         @media (max-width: 600px) {
             padding: 2rem 0;
@@ -96,6 +95,8 @@
         img {
             margin-left: auto;
             display: block;
+            width: 100%;
+            max-width: 380px;
         }
 
         @media (max-width: 850px) {
