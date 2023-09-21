@@ -3,11 +3,14 @@ import { recipes } from "../../components/blog/recipes";
 import { useEffect, useState, FC } from "react";
 import { useNavigate } from "react-router-dom";
 import { BlogCard, BlogHero, Recipes } from "../../components/blog/chunks";
+import { useSelector, useDispatch } from "react-redux";
+import { setBlogTab, setDrinkId } from "../../store/slice/stateSlice";
 
 const Blog: FC = () => {
 
     const navigate = useNavigate()
-    const [activePost, setActiveBlog] = useState<string>("all")
+    const dispatch = useDispatch()
+    const activePost = useSelector((state: string | any) => state.state?.blogTab)
 
     interface Provider {
         id: number,
@@ -17,8 +20,10 @@ const Blog: FC = () => {
 
     for (const key in option) {
         localStorage.setItem("fruit__un-iD", JSON.stringify(key));
+        dispatch(setDrinkId(key))
     }
-    const checkStorage = JSON.parse(localStorage.getItem("fruit__un-iD") as string);
+    const checkStorage = useSelector((state: any) => state.state?.drinkId)
+
     const fruitId = parseFloat(checkStorage);
 
     const fruitDrink = recipes.find(drinkId => drinkId.id === fruitId);
@@ -27,11 +32,9 @@ const Blog: FC = () => {
         const update = { ...option }
         update[data.id] = !option[data.id]
         setOption(update)
-        if (checkStorage !== null || undefined) {
-            setTimeout(() => {
-                navigate(`recipe/${JSON.parse(localStorage.getItem("fruit_name") as string)}`)
-            }, 300);
-        }
+        setTimeout(() => {
+            navigate(`recipe/${JSON.parse(localStorage.getItem("fruit_name") as string)}`)
+        }, 300);
     };
 
     useEffect(() => {
@@ -42,10 +45,10 @@ const Blog: FC = () => {
         <section id="blog">
             <BlogHero heading="Exploring the Divine World of Beverages" paragraph="Stay ahead of the curve by delving into the latest mixology trends sweeping the cocktail scene. Discover innovative ingredients, unique flavor combinations, and cutting-edge techniques that are redefining the art of mixology. ." button="Read More" />
             <div className="blog__nav">
-                <button className={activePost === "all" ? "active" : ""} onClick={() => setActiveBlog("all")}>All</button>
-                <button className={activePost === "trending" ? "active" : ""} onClick={() => setActiveBlog("trending")}>Trending</button>
-                <button className={activePost === "previous" ? "active" : ""} onClick={() => setActiveBlog("previous")}>Previous</button>
-                <button className={activePost === "recipes" ? "active" : ""} onClick={() => setActiveBlog("recipes")}>Recipes</button>
+                <button className={activePost === "all" ? "active" : ""} onClick={() => dispatch(setBlogTab("all"))}>All</button>
+                <button className={activePost === "trending" ? "active" : ""} onClick={() => dispatch(setBlogTab("trending"))}>Trending</button>
+                <button className={activePost === "previous" ? "active" : ""} onClick={() => dispatch(setBlogTab("previous"))}>Previous</button>
+                <button className={activePost === "recipes" ? "active" : ""} onClick={() => dispatch(setBlogTab("recipes"))}>Recipes</button>
             </div>
             {activePost === "all" && (
                 <section id="blog__post__all">
