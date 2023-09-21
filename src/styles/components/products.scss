@@ -59,6 +59,7 @@ $scroll-bar-bg-color: hsla(0, 0%, 13%, 1);
             img {
                 display: block;
                 margin: 0 auto 10px auto;
+                max-height: 170px;
 
                 @media (max-width: 850px) {
                     max-height: 130px;
@@ -80,11 +81,6 @@ $scroll-bar-bg-color: hsla(0, 0%, 13%, 1);
         .price {
             display: flex;
             justify-content: space-between;
-            margin: 8px 0;
-
-            @media (max-width: 850px) {
-                margin: 4px 0;
-            }
 
             p {
                 &:nth-child(1) {
@@ -111,7 +107,6 @@ $scroll-bar-bg-color: hsla(0, 0%, 13%, 1);
         .ratings {
             display: flex;
             justify-content: space-between;
-            margin: 8px 0;
             align-items: center;
 
             p {
@@ -120,18 +115,18 @@ $scroll-bar-bg-color: hsla(0, 0%, 13%, 1);
             }
 
             img {
-                height: 15px;
+                height: 13px;
             }
         }
 
         button {
-            margin-top: 20px;
+            margin-top: 10px;
             font-family: $poppins;
             padding: 10px 24px 10px 24px;
             border-radius: 20px;
             border: 1px solid $brown100;
             background: transparent;
-            font-size: 1.1rem;
+            font-size: $base;
             color: $brown100;
             font-weight: 500;
             display: block;
@@ -143,8 +138,7 @@ $scroll-bar-bg-color: hsla(0, 0%, 13%, 1);
             }
 
             @media (max-width: 850px) {
-                font-size: $base;
-                margin-top: 10px;
+                font-size: $sm;
                 padding: 5px 24px;
             }
         }

@@ -1,6 +1,10 @@
 $scroll-bar-color: hsl(0, 0%, 77%, .5);
 $scroll-bar-bg-color: hsla(0, 0%, 13%, 1);
 
+// #FE678E
+// #722F37
+// #0B4E8E
+// #CCA600
 #home__page {
 
     .heading {
@@ -13,19 +17,14 @@ $scroll-bar-bg-color: hsla(0, 0%, 13%, 1);
         button {
             border: 1px solid $light100;
             background: transparent;
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             color: $light100;
             font-family: $poppins;
             border-radius: 20px;
-            padding: 12px 24px;
+            padding: 7px 24px;
 
-            @media (max-width: 500px) {
-                font-size: $base;
-                padding: 12px 16px;
-            }
-
-            @media (max-width: 350px) {
-                padding: 8px 16px;
+            @media (max-width: 480px) {
+                font-size: $sm;
             }
         }
     }
@@ -49,43 +48,39 @@ $scroll-bar-bg-color: hsla(0, 0%, 13%, 1);
                 font-size: 1.8rem;
             }
 
-            @media (max-width: 350px) {
-                font-size: $md;
+            @media (max-width: 480px) {
+                font-size: 1.3rem;
             }
         }
     }
 
     .categories {
-        // margin-top: -50px;
 
-        >div {
+        &__drinks {
             display: flex;
             justify-content: center;
             gap: $md;
+            overflow-x: scroll;
+            justify-content: space-between;
+            padding-bottom: $base;
 
-            &:nth-child(2) {
-                overflow-x: scroll;
-                justify-content: space-between;
-                padding-bottom: $base;
+            &::-webkit-scrollbar {
+                width: 5px;
+                height: 10px;
 
-                &::-webkit-scrollbar {
-                    width: 5px;
-                    height: 10px;
-
-                    @media (max-width: 480px) {
-                        display: none;
-                    }
+                @media (max-width: 480px) {
+                    display: none;
                 }
+            }
 
-                &::-webkit-scrollbar-track {
-                    background: $scroll-bar-bg-color;
-                }
+            &::-webkit-scrollbar-track {
+                background: $scroll-bar-bg-color;
+            }
 
-                &::-webkit-scrollbar-thumb {
-                    background-color: $scroll-bar-color;
-                    border-radius: 20px;
-                    border: 3px solid $scroll-bar-bg-color;
-                }
+            &::-webkit-scrollbar-thumb {
+                background-color: $scroll-bar-color;
+                border-radius: 20px;
+                border: 3px solid $scroll-bar-bg-color;
             }
 
             @media (max-width: 850px) {
@@ -97,14 +92,67 @@ $scroll-bar-bg-color: hsla(0, 0%, 13%, 1);
                 border-radius: 20px;
                 flex-grow: 1;
                 flex-basis: 150px;
-                padding: $thin;
+                padding: $thin $thin 1.2rem $thin;
                 text-align: center;
                 max-width: 350px;
                 margin: 0 auto;
-                // min-width: 200px;
+                position: relative;
+                isolation: isolate;
+
+                &::before {
+                    position: absolute;
+                    content: "";
+                    display: inline-block;
+                    height: 45%;
+                    top: 4.3rem;
+                    left: 30px;
+                    right: 0;
+                    z-index: -1;
+                    max-width: 100%;
+                    transition: all .3s ease-in-out;
+                    opacity: 0;
+                    pointer-events: none;
+                    border-radius: 45% 20px 12% 20px / 69% 20px 14% 20px;
+
+                    @media (max-width: 850px) {
+                        top: 2.3rem;
+                    }
+                }
+
+                &:nth-child(1) {
+                    &::before {
+                        background: #FE678E;
+                    }
+                }
+
+                &:nth-child(2) {
+                    &::before {
+                        background: #722F37;
+                    }
+                }
+
+                &:nth-child(3) {
+                    &::before {
+                        background: #0B4E8E;
+                    }
+                }
+
+                &:nth-child(4) {
+                    &::before {
+                        background: #CCA600;
+                    }
+                }
+
+                &:hover {
+                    &::before {
+                        left: $base;
+                        right: $base;
+                        opacity: 1;
+                    }
+                }
 
                 @media (max-width: 1100px) {
-                    min-width: 300px;
+                    min-width: 280px;
                 }
 
                 @media (max-width: 850px) {
@@ -114,7 +162,7 @@ $scroll-bar-bg-color: hsla(0, 0%, 13%, 1);
 
                 img {
                     display: inline-block;
-                    margin: 0 auto;
+                    margin: 0 auto $tiny auto;
 
                     @media (max-width: 850px) {
                         height: 110px;

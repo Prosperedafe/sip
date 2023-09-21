@@ -14,12 +14,13 @@ const HomePage = () => {
     return (
         <section id="home__page">
             <HomeHero />
+            <img src="" alt="" />
             <section className="categories">
                 <div className="heading">
                     <h2>Categories</h2>
                     <button>See More</button>
                 </div>
-                <div>
+                <div className="categories__drinks">
                     <figure>
                         <img src={squezzed} alt="Freshly Squeezed Delight Fruit Juice" />
                         <figcaption>Freshly Squeezed Delight Fruit Juice</figcaption>
