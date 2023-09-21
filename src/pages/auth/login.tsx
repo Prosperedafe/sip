@@ -11,6 +11,7 @@ import { login } from "../../store/slice/userSlice";
 const Login: FC = () => {
 
     const user = useSelector((state: any) => state.user?.user)
+
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
@@ -45,7 +46,7 @@ const Login: FC = () => {
                 <img src={loginIcon} alt="login" />
             </figure>
             <section className="auth__form">
-                {user.firstName ? <h3>Welcome back {user.firstName}</h3> : <></>}
+                {user?.firstName !== undefined ? <h3>Welcome back {user?.firstName}</h3> : <></>}
                 <h2>Login</h2>
                 <form onSubmit={handleSubmit}>
                     <LabelInput value={values.email} error={errors.email} touch={touched.email} blur={handleBlur} change={handleChange} name="email" id="email" type="email" className="" label="Email Address" placeholder="name@gmail.com" />
