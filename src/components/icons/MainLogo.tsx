@@ -1,7 +1,7 @@
 export const MainLogo = () => {
     return (
         <>
-            <svg width="172" height="54" viewBox="0 0 172 54" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+            <svg className="nav-logo" width="172" height="54" viewBox="0 0 172 54" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
                 <mask id="mask0_736_30975" style={{ maskType: "alpha" }} maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="49">
                     <rect width="32" height="49" fill="url(#pattern0)" />
                 </mask>
