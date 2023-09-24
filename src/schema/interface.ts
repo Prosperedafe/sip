@@ -43,3 +43,25 @@ export interface postProps {
     backgroundColor: string,
     animation?: any
 }
+
+export interface RecipeStep {
+    heading: string;
+    img: string;
+    step?: string[];
+}
+
+export interface recipeID {
+  id: number,
+  title: string,
+  paragraph: string,
+  background: string,
+  fruit: any,
+  bottle: any,
+  route: string
+  steps1?: RecipeStep[]
+  steps2?: RecipeStep[]
+  steps3?: RecipeStep[]
+  steps4?: RecipeStep[]
+  steps5?: RecipeStep[]
+  steps6?: RecipeStep[]
+}

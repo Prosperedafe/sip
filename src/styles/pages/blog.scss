@@ -1,0 +1,76 @@
+.blog__beer__recipe {
+    padding: 3rem $p-fluid;
+    color: $light200;
+
+    @media (max-width:650px) {
+        padding: $big $p-fluid;
+    }
+
+    section {
+        display: flex;
+        align-items: center;
+        row-gap: $base;
+        column-gap: 3rem;
+        margin-bottom: $big;
+        flex-wrap: wrap;
+
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &:nth-child(even) {
+            figure {
+                order: 1;
+            }
+
+            >div {
+                order: 2;
+            }
+        }
+
+        @media (max-width:650px) {
+            margin-bottom: 4rem;
+
+            &:nth-child(odd) {
+                figure {
+                    order: 1;
+                }
+
+                >div {
+                    order: 2;
+                }
+            }
+        }
+
+        figure {
+            flex-grow: 1;
+            flex-basis: 250px;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        >div {
+            flex-grow: 1;
+            flex-basis: 350px;
+
+            h3 {
+                font-family: $pacifico;
+                font-weight: 400;
+                font-size: 2.5rem;
+                margin-bottom: $base;
+
+                @media (max-width:800px) {
+                    font-size: $big;
+                }
+            }
+
+            p {
+                font-family: $poppins;
+                font-size: $base;
+            }
+        }
+    }
+}

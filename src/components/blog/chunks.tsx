@@ -2,6 +2,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef, FC, useLayoutEffect } from "react";
 import { recipes, contentprops, postProps } from "../../schema/interface";
+import { useNavigate } from "react-router-dom";
 gsap.registerPlugin(ScrollTrigger)
 
 export const BlogHero: FC<contentprops> = ({ heading, paragraph, button }) => {
@@ -10,13 +11,14 @@ export const BlogHero: FC<contentprops> = ({ heading, paragraph, button }) => {
             <div>
                 <h1>{heading}</h1>
                 <p>{paragraph}</p>
-                <button>{button}</button>
+                {button && <button>{button}</button>}
             </div>
         </section>
     )
 }
 
 export const BlogCard: FC<postProps> = ({ title, paragraph, image, userImg, userName, time, backgroundColor }) => {
+    const navigate = useNavigate()
 
     return (
         <article style={{ background: backgroundColor }}>
@@ -33,7 +35,7 @@ export const BlogCard: FC<postProps> = ({ title, paragraph, image, userImg, user
                         <p className="time" role="time">{time}</p>
                     </div>
                 </div>
-                <button>Read More</button>
+                <button onClick={() => navigate("/blog/news")}>Read More</button>
             </div>
         </article>
     )

@@ -31,28 +31,7 @@ import melonStep2 from "../../assets/images/melon/step2 melon.png";
 import melonStep3 from "../../assets/images/melon/step3 melon.png";
 import melonStep4 from "../../assets/images/melon/step4 melon.png";
 import melonStep5 from "../../assets/images/melon/step5 melon.png";
-
-interface RecipeStep {
-    heading: string;
-    img: string;
-    step?: string[];
-}
-
-interface recipeID {
-  id: number,
-  title: string,
-  paragraph: string,
-  background: string,
-  fruit: any,
-  bottle: any,
-  route: string
-  steps1?: RecipeStep[]
-  steps2?: RecipeStep[]
-  steps3?: RecipeStep[]
-  steps4?: RecipeStep[]
-  steps5?: RecipeStep[]
-  steps6?: RecipeStep[]
-}
+import { recipeID } from "../../schema/interface";
 
 export const recipes:recipeID[] = [
   {
