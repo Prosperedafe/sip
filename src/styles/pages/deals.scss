@@ -2,10 +2,14 @@
     &__hero {
         color: $light100;
         padding: 4rem $p-fluid;
-        min-height: 650px;
+        min-height: 600px;
         display: flex;
         flex-direction: column;
         justify-content: center;
+
+        @media(max-width: 600px) {
+            min-height: 450px;
+        }
 
         h2 {
             font-size: 5rem;
@@ -19,5 +23,9 @@
             font-family: $poppins;
             font-size: 1.2rem;
         }
+    }
+
+    &__deals {
+        padding: $big $p-fluid;
     }
 }
