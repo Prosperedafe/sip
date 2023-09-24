@@ -9,8 +9,11 @@ import { HomeHero } from "../../components/Home/HomeHero";
 import { Categories } from "../../components/products/categories";
 import { hotDeals, mostSearched, recentlyViewed } from "./data";
 import { Faq } from "../../components/faq";
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
+    const navigate = useNavigate()
+
     return (
         <section id="home__page">
             <HomeHero />
@@ -42,7 +45,7 @@ const HomePage = () => {
             <section className="hot__deals">
                 <div className="heading">
                     <h2>Hot Deals</h2>
-                    <button>See More</button>
+                    <button onClick={() => navigate("/deals/day")}>See More</button>
                 </div>
                 <Categories products={hotDeals} />
             </section>

@@ -14,10 +14,17 @@
 @import "./styles/components/blog.scss";
 @import "./styles/pages/fruit-recipe.scss";
 @import "./styles/pages/cart.scss";
+@import "./styles/pages/deals.scss";
 
 .blog__hero__section {
     background: linear-gradient(hsla(0, 0%, 0%, 0.7), hsla(0, 0%, 0%, 0.7)), url("./assets/images/Outlay.png") no-repeat center;
     background-size: cover;
+}
+
+#deals__day__hero {
+    background: linear-gradient(hsla(0, 0%, 0%, 0.8), hsla(0, 0%, 0%, 0.8)), url("./assets/images/deals.png") no-repeat center;
+    background-size: cover;
+    background-position: center;
 }
 
 * {

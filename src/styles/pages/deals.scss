@@ -1,0 +1,23 @@
+#deals__day {
+    &__hero {
+        color: $light100;
+        padding: 4rem $p-fluid;
+        min-height: 650px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h2 {
+            font-size: 5rem;
+            font-size: clamp($big, 5vw, 5rem);
+            font-family: $pacifico;
+            font-weight: 400;
+            margin-bottom: $base;
+        }
+
+        p {
+            font-family: $poppins;
+            font-size: 1.2rem;
+        }
+    }
+}

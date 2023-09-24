@@ -17,6 +17,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/es/integration/react';
 import { store, persistor } from './store/store';
+import DealOfTheDay from './pages/HotDeals/HotDeals';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
               <Route path='/contact' element={<Contact />} />
               <Route path='/login' element={<Login />} />
               <Route path='/signup' element={<SignUp />} />
+              <Route path='/deals/day' element={<DealOfTheDay />} />
               <Route path='/blog/recipe/:fruit' element={<FruitRecipe />} />
               <Route element={<Account />}>
                 <Route path='/account/overview/' element={<AccountOverview />} />
