@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { BlogCard, BlogHero, Recipes } from "../../components/blog/chunks";
 import { useSelector, useDispatch } from "react-redux";
 import { setBlogTab, setDrinkId } from "../../store/slice/stateSlice";
+import { RelatedArticles } from "../fruitRecipe/recipe";
 
 const Blog: FC = () => {
 
@@ -84,15 +85,18 @@ const Blog: FC = () => {
                 </section>
             )}
             {activePost === "recipes" && (
-                <article id="blog__post__recipes">
-                    {recipes.map((recipe: any) => {
-                        return (
-                            <section style={{ background: recipe.background }} key={recipe.id}>
-                                <Recipes onClick={() => handleClick(recipe)} title={recipe.title} paragraph={recipe.paragraph} bottle={recipe.bottle} fruit={recipe.fruit} />
-                            </section>
-                        )
-                    })}
-                </article>
+                <>
+                    <article id="blog__post__recipes">
+                        {recipes.map((recipe: any) => {
+                            return (
+                                <section style={{ background: recipe.background }} key={recipe.id}>
+                                    <Recipes onClick={() => handleClick(recipe)} title={recipe.title} paragraph={recipe.paragraph} bottle={recipe.bottle} fruit={recipe.fruit} />
+                                </section>
+                            )
+                        })}
+                    </article>
+                    <RelatedArticles />
+                </>
             )}
         </section>
     )

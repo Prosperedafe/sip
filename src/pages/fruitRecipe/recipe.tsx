@@ -4,13 +4,30 @@ import { recipes } from "../../components/blog/recipes";
 import { BaseColumn, ReverseColumn } from "./Layout";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef, FC, useEffect, useLayoutEffect } from "react";
+import { useRef, FC, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 gsap.registerPlugin(ScrollTrigger)
 
+
+export const RelatedArticles = () => {
+    return (
+        <section id="related__articles">
+            <h3>Related Articles</h3>
+            <div>
+                {posts.slice(0, 3).map((post: any) => {
+                    return (
+                        <div key={post.id} id="blog__post__all__post">
+                            <BlogCard backgroundColor={post.background} image={post.image} title={post.title} paragraph={post.content} userName={post.userName} userImg={post.userImg} time={post.time} />
+                        </div>
+                    )
+                })}
+            </div>
+        </section>
+    )
+}
+
 const FruitRecipe: FC = () => {
-    useEffect(() => {
-        // window.startFrom(0, 0)
-    })
+    const navigate = useNavigate()
 
     const getIdFromStorage = JSON.parse(localStorage.getItem("fruit__un-iD") as string);
     const fruitId = parseFloat(getIdFromStorage);
@@ -20,7 +37,7 @@ const FruitRecipe: FC = () => {
     const chunkRef = useRef<any>(HTMLImageElement);
     const containerRef = useRef<any>(HTMLDivElement);
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         const bottleElem = bottleRef.current
         gsap.fromTo(bottleElem, { translate: "0 70%" }, {
             translate: "0 0", duration: .4, scrollTrigger: {
@@ -34,8 +51,8 @@ const FruitRecipe: FC = () => {
             }
         })
         const chunkElem = chunkRef.current
-        gsap.fromTo(chunkElem, { translate: "0 70%", scale: .4 }, {
-            translate: "0 0", scale: 1, duration: .4, scrollTrigger: {
+        gsap.fromTo(chunkElem, { scale: .2 }, {
+            scale: 1, duration: .4, scrollTrigger: {
                 trigger: chunkElem
             }
         })
@@ -49,6 +66,14 @@ const FruitRecipe: FC = () => {
 
     return (
         <>
+            <div className="blog-back-btn">
+                <button onClick={() => navigate("/blog")}>
+                    <svg width="15" height="10" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 12L0 6L6 0L7.4 1.4L3.8 5H18V7H3.8L7.4 10.6L6 12Z" fill="white" />
+                    </svg>
+                    <span>back</span>
+                </button>
+            </div>
             <article style={{ background: fruitDrink?.background }} className="fruit__recipe">
                 <section ref={containerRef} className="fruit__recipe__name">
                     <div className="container">
@@ -75,18 +100,7 @@ const FruitRecipe: FC = () => {
                 {fruitDrink?.steps5 ? <ReverseColumn step={fruitDrink?.steps5} /> : <></>}
                 {fruitDrink?.steps6 ? <BaseColumn step={fruitDrink?.steps6} /> : <></>}
             </article>
-            <section id="related__articles">
-                <h3>Related Articles</h3>
-                <div>
-                    {posts.slice(0, 3).map((post: any) => {
-                        return (
-                            <div key={post.id} id="blog__post__all__post">
-                                <BlogCard backgroundColor={post.background} image={post.image} title={post.title} paragraph={post.content} userName={post.userName} userImg={post.userImg} time={post.time} />
-                            </div>
-                        )
-                    })}
-                </div>
-            </section>
+            <RelatedArticles />
         </>
     )
 }

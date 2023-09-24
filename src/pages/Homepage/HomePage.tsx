@@ -18,7 +18,7 @@ const HomePage = () => {
             <section className="categories">
                 <div className="heading">
                     <h2>Categories</h2>
-                    <button>See More</button>
+                    {/* <button>See More</button> */}
                 </div>
                 <div className="categories__drinks">
                     <figure>

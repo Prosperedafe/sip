@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef, FC, useLayoutEffect } from "react";
+import { useRef, FC, useEffect } from "react";
 gsap.registerPlugin(ScrollTrigger)
 
 export const Footer: FC = () => {
@@ -11,8 +11,7 @@ export const Footer: FC = () => {
     const formRef = useRef<any>(HTMLFormElement);
     const pRef = useRef<any>(HTMLParagraphElement);
 
-    useLayoutEffect(() => {
-
+    useEffect(() => {
         const newsElem = newsRef.current
         gsap.fromTo(newsElem, { translate: "-170% 0%" }, {
             translate: "0% 0%", duration: .7, scrollTrigger: {

@@ -1,5 +1,34 @@
+.blog-back-btn {
+    background: transparent;
+    padding: 6rem $p-fluid $base $p-fluid;
+
+    @media (max-width:600px) {
+        padding-top: 5rem;
+    }
+
+    button {
+        font-size: 1.2rem;
+        font-family: $poppins;
+        color: $light100;
+        background: transparent;
+        border: 1px solid $light100;
+        border-radius: 20px;
+        padding: 8px $base;
+        display: flex;
+        align-items: center;
+
+        svg {
+            margin-right: 4px;
+        }
+
+        @media (max-width:480px) {
+            font-size: $sm;
+        }
+    }
+}
+
 .fruit__recipe {
-    padding: 6rem $p-fluid;
+    padding: 3rem $p-fluid;
     scroll-padding-top: 10rem;
 
     * {
@@ -44,6 +73,7 @@
         align-items: center;
         justify-content: space-between;
         gap: $big;
+        overflow: hidden;
 
         .container {
             flex-grow: 1;

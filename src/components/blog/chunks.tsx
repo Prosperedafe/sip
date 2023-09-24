@@ -58,7 +58,7 @@ export const Recipes: FC<recipes> = ({ bottle, fruit, title, paragraph, onClick 
             }
         })
         const chunkElem = chunkRef.current
-        gsap.fromTo(chunkElem, { translate: "0 70%", scale: .4 }, {
+        gsap.fromTo(chunkElem, { translate: "0 0%", scale: .2 }, {
             translate: "0 0", scale: 1, duration: .4, scrollTrigger: {
                 trigger: chunkElem
             }
