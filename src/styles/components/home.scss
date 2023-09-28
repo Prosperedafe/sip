@@ -1,9 +1,18 @@
+.swipe-drink-slide {
+    z-index: -1 !important;
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
 .home__hero {
     min-height: 400px;
 
     &__slider {
         min-height: 400px;
-        background-color: #c485b1;
         padding: 7rem 0;
         position: relative;
         isolation: isolate;
