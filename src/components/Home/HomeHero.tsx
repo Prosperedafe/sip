@@ -1,5 +1,12 @@
 import { Anmeties } from "./anmeties";
 import blackberry from "../../assets/slider/blackberry.svg"
+import pineapple from "../../assets/slider/Pineaplle.svg"
+import apple from "../../assets/slider/Apple.png"
+import coconut from "../../assets/slider/Coconut.png"
+import grapes from "../../assets/slider/Grapes.png"
+import strawberry from "../../assets/slider/strawberry.svg"
+import watermelon from "../../assets/slider/watermelon.svg"
+import orange from "../../assets/slider/Orange.png"
 import bbc from "../../assets/slider/blackberry-chunk.png"
 import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/css';
@@ -16,38 +23,38 @@ const drinks = [
     },
     {
         name: "Pineapple",
-        drink: blackberry,
-        background: "#C485B1"
+        drink: pineapple,
+        background: "#C5BD87"
     },
     {
         name: "Apple",
-        drink: blackberry,
-        background: "#C485B1"
+        drink: apple,
+        background: "#98C587"
     },
     {
         name: "Coconut",
-        drink: blackberry,
-        background: "#C485B1"
+        drink: coconut,
+        background: "#C5A187"
     },
     {
         name: "Grapes",
-        drink: blackberry,
-        background: "#C485B1"
+        drink: grapes,
+        background: "#C5878D"
     },
     {
         name: "StrawBerry",
-        drink: blackberry,
-        background: "#C485B1"
+        drink: strawberry,
+        background: "#C59287"
     },
     {
         name: "Watermelon",
-        drink: blackberry,
-        background: "#C485B1"
+        drink: watermelon,
+        background: "#C58797"
     },
     {
         name: "Orange",
-        drink: blackberry,
-        background: "#C485B1"
+        drink: orange,
+        background: "#C5BC87"
     },
 ]
 
