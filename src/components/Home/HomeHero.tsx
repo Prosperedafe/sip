@@ -7,13 +7,14 @@ import grapes from "../../assets/slider/Grapes.png"
 import strawberry from "../../assets/slider/strawberry.svg"
 import watermelon from "../../assets/slider/watermelon.svg"
 import orange from "../../assets/slider/Orange.png"
-import bbc from "../../assets/slider/blackberry-chunk.png"
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
 import 'swiper/css';
-import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import 'swiper/css/effect-fade';
+import { ChunkContainer } from "./chunks";
 
 const drinks = [
     {
@@ -58,68 +59,28 @@ const drinks = [
     },
 ]
 
-const chunks = [
-    {
-        chunk: bbc
-    },
-    {
-        chunk: bbc
-    },
-    {
-        chunk: bbc
-    },
-    {
-        chunk: bbc
-    },
-    {
-        chunk: bbc
-    },
-    {
-        chunk: bbc
-    },
-    {
-        chunk: bbc
-    },
-    {
-        chunk: bbc
-    },
-    {
-        chunk: bbc
-    },
-    {
-        chunk: bbc
-    },
-    {
-        chunk: bbc
-    },
-    {
-        chunk: bbc
-    },
-    {
-        chunk: bbc
-    },
-    {
-        chunk: bbc
-    },
-    {
-        chunk: bbc
-    },
-    {
-        chunk: bbc
-    },
-]
+
 
 const Chunks = () => {
     return (
         <div className="home__hero__chunks">
-            <div className="container">
-                {chunks.map((chunk: any, index: number) => {
-                    return (
-                        <div key={index} className="chunk">
-                            <img src={chunk.chunk} alt="chunk" />
-                        </div>
-                    )
-                })}
+            <div>
+                <ChunkContainer />
+                <ChunkContainer />
+                <ChunkContainer />
+                <ChunkContainer />
+                <ChunkContainer />
+                <ChunkContainer />
+                <ChunkContainer />
+                <ChunkContainer />
+                <ChunkContainer />
+                <ChunkContainer />
+                <ChunkContainer />
+                <ChunkContainer />
+                <ChunkContainer />
+                <ChunkContainer />
+                <ChunkContainer />
+                <ChunkContainer />
             </div>
         </div>
     )
@@ -127,33 +88,30 @@ const Chunks = () => {
 
 const Slider = () => {
     return (
-        <Swiper
-            modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-            spaceBetween={0}
-            slidesPerView={1}
-            navigation
-            loop={true}
-            onSwiper={(swiper) => console.log(swiper)}
-            onSlideChange={() => console.log('slide change')}
-            className="swipe-drink-slide"
-            keyboard={{ enabled: true, }}
-            autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-            }}
-        >
-            {drinks.map((drink: any, index: number) => {
-                return (
-                    <SwiperSlide style={{ background: drink.background }} key={index} className="home__hero__slider">
-                        <figure>
-                            <img src={drink.drink} className="fruit__img" alt={drink.name} />
-                            <figcaption>{drink.name}</figcaption>
-                        </figure>
-                        <Chunks />
-                    </SwiperSlide>
-                )
-            })}
-        </Swiper>
+        <div className="home__hero__swiper-cover">
+            <Swiper
+                modules={[EffectFade, Navigation, Pagination, Autoplay]}
+                spaceBetween={0}
+                slidesPerView={1}
+                effect={'fade'}
+                navigation
+                loop={true}
+                className="swiper home__hero__swiper-cover__slider"
+                keyboard={{ enabled: true, }}
+                autoplay={{ delay: 2500, disableOnInteraction: false }}>
+                {drinks.map((drink: any, index: number) => {
+                    return (
+                        <SwiperSlide style={{ background: drink.background }} key={index} className="home__hero__swiper-cover__slider__slides">
+                            <figure>
+                                <img src={drink.drink} className="fruit__img" alt={drink.name} />
+                                <figcaption>{drink.name}</figcaption>
+                            </figure>
+                        </SwiperSlide>
+                    )
+                })}
+            </Swiper>
+            <Chunks />
+        </div>
     )
 }
 
