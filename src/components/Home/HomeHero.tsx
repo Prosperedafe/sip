@@ -1,100 +1,87 @@
-import { Anmeties } from "./anmeties";
-import blackberry from "../../assets/slider/blackberry.svg"
-import pineapple from "../../assets/slider/Pineaplle.svg"
 import apple from "../../assets/slider/Apple.png"
-import coconut from "../../assets/slider/Coconut.png"
 import grapes from "../../assets/slider/Grapes.png"
-import strawberry from "../../assets/slider/strawberry.svg"
-import watermelon from "../../assets/slider/watermelon.svg"
 import orange from "../../assets/slider/Orange.png"
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
+import coconut from "../../assets/slider/Coconut.svg"
+import pineapple from "../../assets/slider/Pineaplle.png"
+import blackberry from "../../assets/slider/blackberry.png"
+import strawberry from "../../assets/slider/strawberry.png"
+import watermelon from "../../assets/slider/watermelon.png"
+import appleChunk from "../../assets/slider/apple-chunk.png"
+import grapeChunk from "../../assets/slider/grape-chunk.png"
+import orangeChunk from "../../assets/slider/orange-chunk.png"
+import coconutChunk from "../../assets/slider/coconut-chunk.png"
+import pineappleChunk from "../../assets/slider/pineapple-chunk.png"
+import strawberryChunk from "../../assets/slider/strawberry-chunk.png"
+import blackberryChunk from "../../assets/slider/blackberry-chunk.png"
+import watermelonChunk from "../../assets/slider/melon-chunk.png"
 import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
-import { ChunkContainer } from "./chunks";
+import { Anmeties } from "./anmeties";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay, EffectFade, Keyboard } from 'swiper/modules';
 
 const drinks = [
     {
         name: "BlackBerry",
         drink: blackberry,
-        background: "#C485B1"
+        background: "#C485B1",
+        chunk: blackberryChunk
     },
     {
         name: "Pineapple",
         drink: pineapple,
-        background: "#C5BD87"
+        background: "#C5BD87",
+        chunk: pineappleChunk
     },
     {
         name: "Apple",
         drink: apple,
-        background: "#98C587"
+        background: "#98C587",
+        chunk: appleChunk
     },
     {
         name: "Coconut",
         drink: coconut,
-        background: "#C5A187"
+        background: "#C5A187",
+        chunk: coconutChunk
     },
     {
         name: "Grapes",
         drink: grapes,
-        background: "#C5878D"
+        background: "#C5878D",
+        chunk: grapeChunk
     },
     {
         name: "StrawBerry",
         drink: strawberry,
-        background: "#C59287"
+        background: "#C59287",
+        chunk: strawberryChunk
     },
     {
         name: "Watermelon",
         drink: watermelon,
-        background: "#C58797"
+        background: "#C58797",
+        chunk: watermelonChunk
     },
     {
         name: "Orange",
         drink: orange,
-        background: "#C5BC87"
+        background: "#C5BC87",
+        chunk: orangeChunk
     },
 ]
-
-
-
-const Chunks = () => {
-    return (
-        <div className="home__hero__chunks">
-            <div>
-                <ChunkContainer />
-                <ChunkContainer />
-                <ChunkContainer />
-                <ChunkContainer />
-                <ChunkContainer />
-                <ChunkContainer />
-                <ChunkContainer />
-                <ChunkContainer />
-                <ChunkContainer />
-                <ChunkContainer />
-                <ChunkContainer />
-                <ChunkContainer />
-                <ChunkContainer />
-                <ChunkContainer />
-                <ChunkContainer />
-                <ChunkContainer />
-            </div>
-        </div>
-    )
-}
 
 const Slider = () => {
     return (
         <div className="home__hero__swiper-cover">
             <Swiper
-                modules={[EffectFade, Navigation, Pagination, Autoplay]}
+                modules={[EffectFade, Navigation, Autoplay, Keyboard]}
                 spaceBetween={0}
                 slidesPerView={1}
                 effect={'fade'}
-                navigation
+                navigation={true}
                 loop={true}
                 className="swiper home__hero__swiper-cover__slider"
                 keyboard={{ enabled: true, }}
@@ -106,11 +93,30 @@ const Slider = () => {
                                 <img src={drink.drink} className="fruit__img" alt={drink.name} />
                                 <figcaption>{drink.name}</figcaption>
                             </figure>
+                            <div className="chunks">
+                                <div className="chunks__container">
+                                    <img src={drink.chunk} alt="chunks" />
+                                    <img src={drink.chunk} alt="chunks" />
+                                    <img src={drink.chunk} alt="chunks" />
+                                    <img src={drink.chunk} alt="chunks" />
+                                    <img src={drink.chunk} alt="chunks" />
+                                    <img src={drink.chunk} alt="chunks" />
+                                    <img src={drink.chunk} alt="chunks" />
+                                    <img src={drink.chunk} alt="chunks" />
+                                    <img src={drink.chunk} alt="chunks" />
+                                    <img src={drink.chunk} alt="chunks" />
+                                    <img src={drink.chunk} alt="chunks" />
+                                    <img src={drink.chunk} alt="chunks" />
+                                    <img src={drink.chunk} alt="chunks" />
+                                    <img src={drink.chunk} alt="chunks" />
+                                    <img src={drink.chunk} alt="chunks" />
+                                    <img src={drink.chunk} alt="chunks" />
+                                </div>
+                            </div>
                         </SwiperSlide>
                     )
                 })}
             </Swiper>
-            <Chunks />
         </div>
     )
 }
