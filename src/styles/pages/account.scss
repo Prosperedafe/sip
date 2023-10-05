@@ -216,6 +216,13 @@
         color: $light100;
         font-family: $poppins;
         padding: $base;
+        overflow-x: scroll;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
 
         @media(max-width: 500px) {
             padding: $base;

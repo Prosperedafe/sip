@@ -64,7 +64,7 @@ const Blog: FC = () => {
             )}
             {activePost === "trending" && (
                 <section id="blog__post__all">
-                    {posts.map((post: any) => {
+                    {posts.slice(2, 5).reverse().map((post: any) => {
                         return (
                             <div key={post.id} id="blog__post__all__post">
                                 <BlogCard backgroundColor={post.background} image={post.image} title={post.title} paragraph={post.content} userName={post.userName} userImg={post.userImg} time={post.time} />
@@ -75,7 +75,7 @@ const Blog: FC = () => {
             )}
             {activePost === "previous" && (
                 <section id="blog__post__all">
-                    {posts.map((post: any) => {
+                    {posts.slice(4, 7).reverse().map((post: any) => {
                         return (
                             <div key={post.id} id="blog__post__all__post">
                                 <BlogCard backgroundColor={post.background} image={post.image} title={post.title} paragraph={post.content} userName={post.userName} userImg={post.userImg} time={post.time} />

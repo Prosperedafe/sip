@@ -6,6 +6,7 @@ import spirits from "../../assets/images/spirits.png"
 import beer from "../../assets/images/beer.png"
 import wine from "../../assets/images/wine.png"
 import senerity from "../../assets/images/senerity.png"
+import { useNavigate } from "react-router-dom";
 
 const beerRecipe: Array<object> = [
     {
@@ -41,9 +42,18 @@ const beerRecipe: Array<object> = [
 ]
 
 export const News = () => {
+    const navigate = useNavigate()
     return (
         <>
             <BlogHero heading="Exploring the Divine World of Beverages" paragraph="Stay ahead of the curve by delving into the latest mixology trends sweeping the cocktail scene. Discover innovative ingredients, unique flavor combinations, and cutting-edge techniques that are redefining the art of mixology. ." />
+            <div className="blog-back-btn" style={{ padding: "1rem clamp(.9rem, 5vw, 20rem) 0 clamp(.9rem, 5vw, 20rem)" }}>
+                <button onClick={() => navigate("/blog")}>
+                    <svg width="15" height="10" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 12L0 6L6 0L7.4 1.4L3.8 5H18V7H3.8L7.4 10.6L6 12Z" fill="white" />
+                    </svg>
+                    <span>back</span>
+                </button>
+            </div>
             <article className="blog__beer__recipe">
                 {beerRecipe.map((recipe: any, index: number) => {
                     return (

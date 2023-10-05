@@ -51,17 +51,17 @@ export interface RecipeStep {
 }
 
 export interface recipeID {
-  id: number,
-  title: string,
-  paragraph: string,
-  background: string,
-  fruit: any,
-  bottle: any,
-  route: string
-  steps1?: RecipeStep[]
-  steps2?: RecipeStep[]
-  steps3?: RecipeStep[]
-  steps4?: RecipeStep[]
-  steps5?: RecipeStep[]
-  steps6?: RecipeStep[]
+    id: number,
+    title: string,
+    paragraph: string,
+    background: string,
+    fruit: any,
+    bottle: any,
+    route: string
+    steps1?: RecipeStep[]
+    steps2?: RecipeStep[]
+    steps3?: RecipeStep[]
+    steps4?: RecipeStep[]
+    steps5?: RecipeStep[]
+    steps6?: RecipeStep[]
 }
