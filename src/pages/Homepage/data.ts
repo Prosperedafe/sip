@@ -11,7 +11,7 @@ export const hotDeals: object[] = [
         id: "pineapple",
         drink: pineapple,
         name: "Pineapple Soft Drink",
-        price: "$20",
+        price: "$30",
         rating: rating,
     },
     {

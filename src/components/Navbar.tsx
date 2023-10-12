@@ -9,7 +9,9 @@ import { logout } from "../store/slice/userSlice";
 
 export const Navbar = () => {
     const isAuthenticated = useSelector((state: any) => state.user.user);
-    const [showCart, setShowCart] = useState<boolean>(false)
+    const cartItemsLenght = useSelector((state: any) => state.cart.items);
+
+    const [showCart, setShowCart] = useState<boolean>(true)
     const [showNav, setShowNav] = useState<boolean>(false)
 
     const setCartMode = () => {
@@ -50,6 +52,7 @@ export const Navbar = () => {
                         <a onClick={setCartMode} className="cart items-center">
                             <CartIcon />
                             <span>Cart</span>
+                            {cartItemsLenght.length > 0 ? <button className="cart__items__qty">{cartItemsLenght.length}</button> : null}
                         </a>
                         : null
                     }

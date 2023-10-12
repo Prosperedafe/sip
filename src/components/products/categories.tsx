@@ -1,19 +1,26 @@
 import { FC } from "react";
-import { useDispatch } from "react-redux";
-import { addToCart } from "../../store/slice/productSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart, removeItem } from "../../store/slice/productSlice";
 import { Product } from "../../schema/interface";
-
 
 interface CategoriesProps {
     products: Product[];
 }
 
-
 export const Categories: FC<CategoriesProps> = ({ products }) => {
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+    const cartItems = useSelector((state: any) => state.cart.items);
 
-    const addProductToCart = (product: Product) => {
-        dispatch(addToCart(product));
+    const isProductInCart = (product: Product) => {
+        return cartItems.some((item: Product) => item.id === product.id);
+    }
+
+    const addOrRemoveProduct = (product: Product) => {
+        if (isProductInCart(product)) {
+            dispatch(removeItem(product));
+        } else {
+            dispatch(addToCart(product));
+        }
     }
 
     return (
@@ -32,7 +39,9 @@ export const Categories: FC<CategoriesProps> = ({ products }) => {
                             <p>Ratings</p>
                             <img src={product.rating} alt="rating" />
                         </div>
-                        <button onClick={() => addProductToCart(product)}>Add to Cart</button>
+                        <button onClick={() => addOrRemoveProduct(product)}>
+                            {isProductInCart(product) ? "Remove From Cart" : "Add To Cart"}
+                        </button>
                     </div>
                 )
             })}

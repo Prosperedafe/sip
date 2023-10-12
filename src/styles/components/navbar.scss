@@ -55,6 +55,19 @@
                 display: flex;
                 position: relative;
                 cursor: pointer;
+
+                .cart__items__qty {
+                    background: transparent;
+                    border: none;
+                    background-color: black;
+                    color: $light100;
+                    font-size: $sm;
+                    font-family: $poppins;
+                    border-radius: 50%;
+                    padding: 5px 0;
+                    height: 35px;
+                    width: 35px;
+                }
             }
 
             .active {
