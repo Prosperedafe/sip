@@ -3,7 +3,7 @@ import storage from 'redux-persist/lib/storage';
 import userReducer from './slice/userSlice';
 import blogReducer from "./slice/stateSlice";
 import cartReducer from "./slice/productSlice"
-import { persistReducer, persistStore, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER, } from 'redux-persist';
+import { persistReducer, persistStore } from 'redux-persist';
 
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 
