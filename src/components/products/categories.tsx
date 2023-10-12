@@ -17,7 +17,7 @@ export const Categories: FC<CategoriesProps> = ({ products }) => {
 
     const addOrRemoveProduct = (product: Product) => {
         if (isProductInCart(product)) {
-            dispatch(removeItem(product));
+            dispatch(removeItem(product.id));
         } else {
             dispatch(addToCart(product));
         }

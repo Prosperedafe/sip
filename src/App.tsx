@@ -21,6 +21,7 @@ import DealOfTheDay from './pages/HotDeals/HotDeals';
 import { News } from './pages/news/news';
 
 function App() {
+
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>

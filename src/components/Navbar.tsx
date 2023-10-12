@@ -1,9 +1,8 @@
 import Cart from "../pages/cart/cart";
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CartIcon, MainLogo } from "./icons/MainLogo";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { logout } from "../store/slice/userSlice";
 
@@ -11,7 +10,7 @@ export const Navbar = () => {
     const isAuthenticated = useSelector((state: any) => state.user.user);
     const cartItemsLenght = useSelector((state: any) => state.cart.items);
 
-    const [showCart, setShowCart] = useState<boolean>(true)
+    const [showCart, setShowCart] = useState<boolean>(false)
     const [showNav, setShowNav] = useState<boolean>(false)
 
     const setCartMode = () => {
@@ -36,6 +35,18 @@ export const Navbar = () => {
         }, 1000)
     };
 
+    const colors = ['#FE678E', '#66B447', '#D48C57', '#C9CC3F'];
+    const [randomItem, setRandomItem] = useState<string>("");
+
+    const getRandomItem = () => {
+        const randomIndex = Math.floor(Math.random() * colors.length);
+        const selectedRandomItem = colors[randomIndex];
+        setRandomItem(selectedRandomItem);
+    };
+    useEffect(() => {
+        getRandomItem()
+    }, [cartItemsLenght])
+
     return (
         <header className="main__header">
             <nav className="main__header__nav flex space-between items-center">
@@ -52,7 +63,7 @@ export const Navbar = () => {
                         <a onClick={setCartMode} className="cart items-center">
                             <CartIcon />
                             <span>Cart</span>
-                            {cartItemsLenght.length > 0 ? <button className="cart__items__qty">{cartItemsLenght.length}</button> : null}
+                            {cartItemsLenght.length > 0 ? <button style={{ background: randomItem }} className="cart__items__qty">{cartItemsLenght.length}</button> : null}
                         </a>
                         : null
                     }

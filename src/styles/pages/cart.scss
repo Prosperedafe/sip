@@ -4,7 +4,7 @@
     z-index: 1000;
     background: hsla(0, 0%, 13%, 0.98);
     width: 100%;
-    max-width: 700px;
+    max-width: 550px;
     right: 0;
     border-radius: 20px 0px 0px 0px;
     overflow-y: scroll;
@@ -40,7 +40,6 @@
             font-size: $base;
         }
     }
-
 
     .back {
         display: flex;
@@ -152,6 +151,17 @@
                 margin-bottom: $base;
             }
         }
+    }
+
+    .empty-cart {
+        color: hsla(0, 0%, 82%, 1);
+        display: block;
+        margin: $big auto;
+        font-family: $poppins;
+        font-size: $base;
+        border: 1px solid hsla(0, 0%, 82%, 1);
+        padding: $tiny $big;
+        border-radius: 10px;
     }
 
     &__total {

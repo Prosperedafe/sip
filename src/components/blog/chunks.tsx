@@ -5,13 +5,13 @@ import { recipes, contentprops, postProps } from "../../schema/interface";
 import { useNavigate } from "react-router-dom";
 gsap.registerPlugin(ScrollTrigger)
 
-export const BlogHero: FC<contentprops> = ({ heading, paragraph, button }) => {
+export const BlogHero: FC<contentprops> = ({ heading, paragraph }) => {
     return (
         <section className="blog__hero__section">
             <div>
                 <h1>{heading}</h1>
                 <p>{paragraph}</p>
-                {button && <button>{button}</button>}
+                {/* {button && <button>{button}</button>} */}
             </div>
         </section>
     )

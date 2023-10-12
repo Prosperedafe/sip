@@ -44,7 +44,7 @@ const Blog: FC = () => {
 
     return (
         <section id="blog">
-            <BlogHero heading="Exploring the Divine World of Beverages" paragraph="Stay ahead of the curve by delving into the latest mixology trends sweeping the cocktail scene. Discover innovative ingredients, unique flavor combinations, and cutting-edge techniques that are redefining the art of mixology. ." button="Read More" />
+            <BlogHero heading="Exploring the Divine World of Beverages" paragraph="Stay ahead of the curve by delving into the latest mixology trends sweeping the cocktail scene. Discover innovative ingredients, unique flavor combinations, and cutting-edge techniques that are redefining the art of mixology. ." />
             <div className="blog__nav">
                 <button className={activePost === "all" ? "active" : ""} onClick={() => dispatch(setBlogTab("all"))}>All</button>
                 <button className={activePost === "trending" ? "active" : ""} onClick={() => dispatch(setBlogTab("trending"))}>Trending</button>

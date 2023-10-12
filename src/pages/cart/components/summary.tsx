@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { incrementQuantity, decrementQuantity, removeItem } from "../../../store/slice/productSlice";
+import { incrementQuantity, decrementQuantity, removeItem, emptyCart } from "../../../store/slice/productSlice";
 
 interface actions {
     mode: any
@@ -24,7 +24,7 @@ export const Summary: FC<actions> = ({ checkOut, mode }) => {
                     </svg>
                 </div>
             </div>
-            {cartItems.length > 0 ? <h2>Cart Summary</h2> : <h2>Cart is Empty</h2>}
+            {cartItems.length > 0 ? <h2>Cart Summary</h2> : <h2>Your Cart is Empty</h2>}
             {cartItems.map((items: any) => {
                 return (
                     <div id="cart__items" key={items.id}>
@@ -68,29 +68,34 @@ export const Summary: FC<actions> = ({ checkOut, mode }) => {
                     </div>
                 )
             })}
-            <section id="cart__total">
-                <div className="sub-total">
-                    <p>Subtotal</p>
-                    <p>$60</p>
-                </div>
-                <div className="delivery">
-                    <p>Delivery</p>
-                    <p>$0.5</p>
-                </div>
-                <div className="address">
-                    <p>Address</p>
-                    <p>No 6, Unity Str, Off Ikotun, Lagos State</p>
-                </div>
-                <div className="total">
-                    <p>Total</p>
-                    <p>$40.5</p>
-                </div>
-
-                <div className="actions">
-                    <button className="light-brown">Continue Shopping</button>
-                    <button className="light-brown" onClick={checkOut}>Checkout</button>
-                </div>
-            </section>
+            {cartItems.length > 0 ?
+                <>
+                    <section id="cart__total">
+                        <div className="sub-total">
+                            <p>Subtotal</p>
+                            <p>$60</p>
+                        </div>
+                        <div className="delivery">
+                            <p>Delivery</p>
+                            <p>$0.5</p>
+                        </div>
+                        <div className="address">
+                            <p>Address</p>
+                            <p>No 6, Unity Str, Off Ikotun, Lagos State</p>
+                        </div>
+                        <div className="total">
+                            <p>Total</p>
+                            <p>$40.5</p>
+                        </div>
+                        <div className="actions">
+                            <button className="light-brown">Continue Shopping</button>
+                            <button className="light-brown" onClick={checkOut}>Checkout</button>
+                        </div>
+                    </section>
+                    <button className="empty-cart" onClick={() => dispatch(emptyCart(cartItems))}>Empty Cart</button>
+                </>
+                : null
+            }
         </section>
     )
 }
