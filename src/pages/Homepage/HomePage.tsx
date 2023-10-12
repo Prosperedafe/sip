@@ -10,6 +10,29 @@ import { Categories } from "../../components/products/categories";
 import { hotDeals, mostSearched, recentlyViewed } from "./data";
 import { Faq } from "../../components/faq";
 import { useNavigate } from "react-router-dom";
+import { Product } from "../../schema/interface";
+
+const deals: Product[] = hotDeals.map((productData: any) => ({
+    id: productData.id,
+    name: productData.name,
+    price: productData.price,
+    rating: productData.rating,
+    drink: productData.drink,
+}));
+const searched: Product[] = mostSearched.map((productData: any) => ({
+    id: productData.id,
+    name: productData.name,
+    price: productData.price,
+    rating: productData.rating,
+    drink: productData.drink,
+}));
+const viewed: Product[] = recentlyViewed.map((productData: any) => ({
+    id: productData.id,
+    name: productData.name,
+    price: productData.price,
+    rating: productData.rating,
+    drink: productData.drink,
+}));
 
 const HomePage = () => {
     const navigate = useNavigate()
@@ -47,21 +70,21 @@ const HomePage = () => {
                     <h2>Hot Deals</h2>
                     <button onClick={() => navigate("/deals/day")}>See More</button>
                 </div>
-                <Categories products={hotDeals} />
+                <Categories products={deals} />
             </section>
             <section className="most__searched">
                 <div className="heading">
                     <h2>Most Searched</h2>
                     <button>See More</button>
                 </div>
-                <Categories products={mostSearched} />
+                <Categories products={searched} />
             </section>
             <section className="recently__viewed">
                 <div className="heading">
                     <h2>Recently viewed</h2>
                     <button>See More</button>
                 </div>
-                <Categories products={recentlyViewed} />
+                <Categories products={viewed} />
             </section>
             <section className="trial">
                 <div>

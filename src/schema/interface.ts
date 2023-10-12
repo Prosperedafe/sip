@@ -19,6 +19,14 @@ export interface click {
     onClick: any
 }
 
+export interface Product {
+    id: number | string;
+    name: string;
+    price: number;
+    rating: string;
+    drink: string;
+}
+
 export interface recipes {
     bottle: string,
     fruit: string,
