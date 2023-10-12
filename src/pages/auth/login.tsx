@@ -32,10 +32,10 @@ const Login: FC = () => {
         onSubmit
     });
 
-    const isAuthenticated = useSelector((state: any) => state.user.isAuthenticated);
+    const isAuthenticated = useSelector((state: any) => state.user.user);
 
     useEffect(() => {
-        if (isAuthenticated === true) {
+        if (isAuthenticated !== null) {
             navigate("/account/overview")
         }
     }, [])

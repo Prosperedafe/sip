@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { AccountNav } from "../../components/AccountNav";
 import { useSelector } from "react-redux";
 
@@ -23,7 +22,7 @@ const AccountOverview = () => {
                         <h4>Phone Number</h4>
                         <p>+123 456 7890</p>
                         <div>
-                            <Link to="/edit-profile">Edit</Link>
+                            <a>Edit</a>
                         </div>
                     </section>
                     <section className="address">

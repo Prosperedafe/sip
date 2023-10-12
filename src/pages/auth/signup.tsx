@@ -30,10 +30,10 @@ const SignUp: FC = () => {
         onSubmit
     });
 
-    const isAuthenticated = useSelector((state: any) => state.user.isAuthenticated);
+    const isAuthenticated = useSelector((state: any) => state.user.user);
 
     useEffect(() => {
-        if (isAuthenticated === true) {
+        if (isAuthenticated !== null) {
             navigateToHome("/account/overview")
         }
     }, [])

@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 
 export const AccountNav = () => {
-    const user = useSelector((state: any) => state.user?.user)
+    const user = useSelector((state: any) => state?.user?.user)
 
     return (
         <aside className="account__sidebar">

@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { logout } from "../store/slice/userSlice";
 
 export const Navbar = () => {
-    const isAuthenticated = useSelector((state: any) => state.user.isAuthenticated);
+    const isAuthenticated = useSelector((state: any) => state.user.user);
     const [showCart, setShowCart] = useState<boolean>(false)
     const [showNav, setShowNav] = useState<boolean>(false)
 
@@ -46,7 +46,7 @@ export const Navbar = () => {
                     </svg>
                     <NavLink onClick={changeNavState} className={({ isActive }) => (isActive ? "active" : "")} to="/">Home</NavLink>
                     <NavLink onClick={changeNavState} to="/blog">Blog</NavLink>
-                    {isAuthenticated === true ?
+                    {isAuthenticated !== null ?
                         <a onClick={setCartMode} className="cart items-center">
                             <CartIcon />
                             <span>Cart</span>
@@ -54,15 +54,15 @@ export const Navbar = () => {
                         : null
                     }
                     <NavLink onClick={changeNavState} to="/contact">Contact</NavLink>
-                    {isAuthenticated === false ?
+                    {isAuthenticated === null ?
                         <NavLink onClick={changeNavState} to="/signup">Sign Up</NavLink>
                         : null
                     }
-                    {isAuthenticated === true ?
+                    {isAuthenticated !== null ?
                         <NavLink onClick={changeNavState} to="/account/overview">Account</NavLink>
                         : null
                     }
-                    {isAuthenticated === true ?
+                    {isAuthenticated !== null ?
                         <a onClick={logOut} style={{ display: "flex", alignItems: "center", cursor: "pointer" }}>
                             <span>Logout</span>
                             <svg style={{ marginLeft: "8px" }} width="28" height="28" fill="none" stroke="#B3B2B2" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
