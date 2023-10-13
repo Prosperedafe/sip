@@ -74,10 +74,6 @@ export const Summary: FC<actions> = ({ checkOut, mode }) => {
             {cartItems.length > 0 ?
                 <>
                     <section id="cart__total">
-                        <div className="sub-total">
-                            <p>Subtotal</p>
-                            <p>$60</p>
-                        </div>
                         <div className="delivery">
                             <p>Delivery</p>
                             <p>$10</p>
