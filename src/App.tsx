@@ -1,6 +1,5 @@
 import './App.scss';
 import Blog from './pages/Blog/blog';
-import Login from './pages/auth/login';
 import SignUp from './pages/auth/signup';
 import Account from './pages/account/Account';
 import Contact from './pages/contact/contact';
@@ -33,8 +32,7 @@ function App() {
               <Route path='/' element={<HomePage />} />
               <Route path='/blog' element={<Blog />} />
               <Route path='/contact' element={<Contact />} />
-              <Route path='/login' element={<Login />} />
-              <Route path='/signup' element={<SignUp />} />
+              {/* <Route path='/login' element={<Login />} /> */}
               <Route path='/signup' element={<SignUp />} />
               <Route path='/deals/day' element={<DealOfTheDay />} />
               <Route path='/blog/news' element={<News />} />

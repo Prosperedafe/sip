@@ -33,7 +33,7 @@ export const Categories: FC<CategoriesProps> = ({ products }) => {
                             <figcaption>{product.name}</figcaption>
                         </figure>
                         <div className="price">
-                            <p>Price</p><p>{product.price}</p>
+                            <p>Price</p><p>${product.price}</p>
                         </div>
                         <div className="ratings">
                             <p>Ratings</p>

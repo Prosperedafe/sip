@@ -10,7 +10,10 @@ interface actions {
 export const Summary: FC<actions> = ({ checkOut, mode }) => {
 
     const cartItems = useSelector((state: any) => state?.cart?.items)
+
     const dispatch = useDispatch()
+
+    const total = cartItems.reduce((acc: any, item: any) => acc + parseInt(item.price), 0);
 
     return (
         <section id="cart__summary">
@@ -29,7 +32,7 @@ export const Summary: FC<actions> = ({ checkOut, mode }) => {
                 return (
                     <div id="cart__items" key={items.id}>
                         <div className="item">
-                            <img className="item__image" src={items.drinkIcon} alt={items.name} />
+                            <img className="item__image" src={items.drink} alt={items.name} />
                             <div>
                                 <h3>{items.name}</h3>
                                 <div className="actions">
@@ -63,7 +66,7 @@ export const Summary: FC<actions> = ({ checkOut, mode }) => {
                                     <path fillRule="evenodd" clipRule="evenodd" d="M1.25316 0.756087C1.17167 0.837367 1.10702 0.933925 1.06291 1.04023C1.0188 1.14653 0.996094 1.26049 0.996094 1.37559C0.996094 1.49068 1.0188 1.60464 1.06291 1.71095C1.10702 1.81725 1.17167 1.91381 1.25316 1.99509L13.5032 14.2451C13.6675 14.4094 13.8903 14.5017 14.1227 14.5017C14.355 14.5017 14.5779 14.4094 14.7422 14.2451C14.9065 14.0808 14.9988 13.8579 14.9988 13.6256C14.9988 13.3932 14.9065 13.1704 14.7422 13.0061L2.49216 0.756087C2.41088 0.674602 2.31432 0.609952 2.20802 0.56584C2.10171 0.521729 1.98775 0.499023 1.87266 0.499023C1.75757 0.499023 1.6436 0.521729 1.5373 0.56584C1.43099 0.609952 1.33444 0.674602 1.25316 0.756087Z" fill="#C8161D" />
                                 </svg>
                             </button>
-                            <p>{items.price}</p>
+                            <p>${items.price}</p>
                         </div>
                     </div>
                 )
@@ -77,7 +80,7 @@ export const Summary: FC<actions> = ({ checkOut, mode }) => {
                         </div>
                         <div className="delivery">
                             <p>Delivery</p>
-                            <p>$0.5</p>
+                            <p>$10</p>
                         </div>
                         <div className="address">
                             <p>Address</p>
@@ -85,7 +88,7 @@ export const Summary: FC<actions> = ({ checkOut, mode }) => {
                         </div>
                         <div className="total">
                             <p>Total</p>
-                            <p>$40.5</p>
+                            <p>${total}</p>
                         </div>
                         <div className="actions">
                             <button className="light-brown">Continue Shopping</button>

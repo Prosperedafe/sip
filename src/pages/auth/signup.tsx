@@ -3,7 +3,7 @@ import { FC, useEffect } from "react";
 import { setUser } from "../../store/slice/userSlice";
 import { useFormik } from "formik";
 import { basicSchema } from "../../schema";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { LabelInput, PasswordInput, SubmitBtn } from "../../components/inputs";
 
@@ -51,7 +51,7 @@ const SignUp: FC = () => {
                         <PasswordInput value={values.confirmPassword} error={errors.confirmPassword} touch={touched.confirmPassword} blur={handleBlur} change={handleChange} className={errors.confirmPassword && touched.confirmPassword ? "input-error" : ""} name="confirmPassword" label="Confirm Password" placeholder="confirm password" id="confirmPassword" />
                         <SubmitBtn disable={""} content={isSubmitting ? "Signing Up..." : "Sign Up"} />
                     </form>
-                    <p className="link">Already have an account? <Link to="/login">Login</Link></p>
+                    {/* <p className="link">Already have an account? <Link to="/login">Login</Link></p> */}
                 </section>
                 <figure>
                     <img src={signup} alt="sign up" />

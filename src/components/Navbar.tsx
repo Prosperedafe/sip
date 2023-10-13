@@ -29,7 +29,7 @@ export const Navbar = () => {
     const logOut = () => {
         changeNavState
         dispatch(logout())
-        navigate("/login")
+        navigate("/signup")
         setTimeout(() => {
             window.location.reload()
         }, 1000)

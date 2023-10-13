@@ -17,6 +17,10 @@
                 padding: 7rem 0;
                 position: relative;
 
+                @media (max-width: 600px) {
+                    padding: 4rem 0;
+                }
+
                 figure {
 
                     figcaption {
@@ -31,8 +35,8 @@
                         top: 40%;
                         z-index: -2;
 
-                        @media (max-width: 800px) {
-                            top: 18%;
+                        @media (max-width: 600px) {
+                            display: none;
                         }
                     }
 
@@ -58,7 +62,7 @@
                     pointer-events: none;
 
                     @media (max-width: 800px) {
-                        padding: 6rem $base;
+                        padding: 5rem 0;
                     }
 
                     &__container {
@@ -72,7 +76,7 @@
                             position: absolute;
 
                             @media (max-width: 480px) {
-                                height: 40px;
+                                height: 60px;
                             }
 
                             &:nth-child(1) {

@@ -41,7 +41,7 @@ $scroll-bar-bg-color: hsla(0, 0%, 13%, 1);
             font-family: $pacifico;
             color: $light100;
             font-weight: 400;
-            margin-bottom: $base;
+            // margin-bottom: $base;
             line-height: 1.2;
 
             @media (max-width: 850px) {
@@ -50,6 +50,10 @@ $scroll-bar-bg-color: hsla(0, 0%, 13%, 1);
 
             @media (max-width: 480px) {
                 font-size: 1.3rem;
+            }
+
+            @media (max-width: 300px) {
+                font-size: $base;
             }
         }
     }

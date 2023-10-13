@@ -103,6 +103,10 @@
         gap: $base;
         flex-wrap: wrap;
 
+        @media(max-width: 600px) {
+            gap: 5px;
+        }
+
         .item {
             display: flex;
             align-items: center;
@@ -110,6 +114,14 @@
             &__image {
                 max-height: 110px;
                 margin-right: $md;
+
+                @media(max-width: 600px) {
+                    margin-right: 10px;
+                }
+
+                @media(max-width: 350px) {
+                    max-height: 80px;
+                }
             }
 
             h3 {
@@ -120,6 +132,11 @@
 
                 @media(max-width: 600px) {
                     font-size: $base;
+                }
+
+                @media(max-width: 350px) {
+                    font-size: .8rem;
+                    font-family: $poppins;
                 }
             }
 
@@ -142,6 +159,11 @@
             p {
                 font-size: $md;
                 font-weight: 500;
+
+                @media(max-width: 350px) {
+                    font-size: .9rem;
+                    font-family: $poppins;
+                }
             }
 
             button {

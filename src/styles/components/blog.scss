@@ -1,13 +1,13 @@
 .blog__hero__section {
     padding: 10rem $p-fluid $big $p-fluid;
-    min-height: 500px;
+    min-height: 400px;
     display: flex;
     align-items: center;
     color: $light100;
 
     @media(min-width: 800px) {
-        padding: 4rem $p-fluid;
-        min-height: 780px;
+        padding: 4rem $p-fluid 2rem $p-fluid;
+        min-height: 580px;
     }
 
     >div {
@@ -25,9 +25,10 @@
             font-family: $poppins;
             margin-top: 4rem;
 
-            @media(max-width: 600px) {
+            @media(max-width: 800px) {
                 font-size: $base;
                 margin-top: $big;
+                margin-bottom: $base;
             }
         }
 
@@ -157,7 +158,7 @@
 
     @media(max-width: 600px) {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         margin-top: $base;
         column-gap: $base;
         overflow-x: scroll;
@@ -176,7 +177,12 @@
         @media(max-width: 800px) {
             padding: .6rem $base;
             font-size: $sm;
+
+            &:nth-child(3) {
+                display: none;
+            }
         }
+
     }
 
     .active {
