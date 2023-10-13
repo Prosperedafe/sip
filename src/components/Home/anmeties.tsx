@@ -48,17 +48,20 @@ export const Anmeties = () => {
     return (
         <div className="home__anmeties">
             <div>
-                {anmeties.map((anmetie: any) => {
-                    return (
-                        <div key={anmetie.id}>
-                            {anmetie.icon}
-                            <div>
-                                <h3>{anmetie.type}</h3>
-                                <p>{anmetie.feature}</p>
+                <h2>Our Services</h2>
+                <div>
+                    {anmeties.map((anmetie: any) => {
+                        return (
+                            <div key={anmetie.id}>
+                                {anmetie.icon}
+                                <div>
+                                    <h3>{anmetie.type}</h3>
+                                    <p>{anmetie.feature}</p>
+                                </div>
                             </div>
-                        </div>
-                    )
-                })}
+                        )
+                    })}
+                </div>
             </div>
         </div>
     )

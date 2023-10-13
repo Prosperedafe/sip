@@ -187,24 +187,35 @@
         }
 
         >div {
-            border-radius: 20px;
             background: $dark200;
-            display: flex;
-            justify-content: space-between;
-            padding: $md;
-            margin: auto;
-            flex-wrap: wrap;
-            gap: $sm;
+            border-radius: 20px;
+            padding: $base $md;
+
+            h2 {
+                font-family: $pacifico;
+                font-weight: 300;
+                font-size: $big;
+                color: $light200;
+                margin-bottom: $base;
+            }
 
             >div {
                 display: flex;
-                flex-grow: 1;
-                flex-basis: 150px;
+                justify-content: space-between;
+                margin: auto;
+                flex-wrap: wrap;
+                gap: $sm;
 
-                svg {
-                    margin: 5px 8px 0 0;
+                >div {
+                    display: flex;
+                    flex-grow: 1;
+                    flex-basis: 150px;
+
+                    svg {
+                        margin: 5px 8px 0 0;
+                    }
+
                 }
-
             }
         }
     }
