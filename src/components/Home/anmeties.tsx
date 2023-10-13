@@ -48,7 +48,7 @@ export const Anmeties = () => {
     return (
         <div className="home__anmeties">
             <div>
-                <h2>Our Offer</h2>
+                <h2>Our Offers</h2>
                 <div>
                     {anmeties.map((anmetie: any) => {
                         return (
