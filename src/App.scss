@@ -86,3 +86,83 @@ body::-webkit-scrollbar-thumb {
     border-radius: 20px;
     border: 3px solid $scroll-bar-bg-color;
 }
+
+.not-found-page {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: $light100;
+    text-align: center;
+    padding: 6rem $p-fluid;
+
+    h1 {
+        font-size: 3rem;
+        font-family: $pacifico;
+        font-weight: 400;
+
+        @media (max-width: 800px) {
+            font-size: $big;
+        }
+    }
+
+    p {
+        font-family: $poppins;
+        font-size: 1.2rem;
+        margin: $base 0;
+    }
+
+    .not-found-btn {
+        font-size: 1.2rem;
+        text-transform: capitalize;
+        border: 2px solid $light100;
+        color: $light100;
+        background: transparent;
+        padding: .4rem $base;
+        border-radius: 15px;
+        font-family: $poppins;
+        display: block;
+        margin: $base auto;
+    }
+}
+
+.loading-fallback {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 6rem 2rem;
+    color: $light100;
+    font-family: $pacifico;
+    background: #f49b87;
+    min-height: 90vh;
+
+    h1 {
+        font-weight: 400;
+        margin-bottom: $base;
+        animation: scaleAnimation 2s ease-in-out infinite;
+        transform-origin: center;
+    }
+
+    img {
+        height: 300px;
+        animation: scaleAnimation 2s ease-in-out infinite;
+        transform-origin: center;
+    }
+}
+
+@keyframes scaleAnimation {
+    0% {
+        transform: scale(0.7);
+    }
+
+    50% {
+        transform: scale(1);
+        /* Scale up to 1 at the midpoint of the animation */
+    }
+
+    100% {
+        transform: scale(0.7);
+    }
+}
